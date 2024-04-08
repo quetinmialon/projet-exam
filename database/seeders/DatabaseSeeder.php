@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'name' => 'test_product',
             'price' => 25,
-            'description' => "this is a brieve description of this unexisting product"
+            'description' => "this is a brieve description of this unexisting product",
+            'img' => ''
         ]); 
     }
 }
