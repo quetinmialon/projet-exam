@@ -8,27 +8,15 @@
 </head>
 <body>
     <x-header/>
-    <x-wallpaper/>
     <section>
-    @for($i = 0; $i<4 ; $i++)
-        <div> {{$products}} </div>
-        <div>{{$products}}€</div>
-        <img src="{{$products}}" >
-    @endfor
-    </section>
-    <section>
-    @for($i = 0; $i<4 ; $i++)
-        <div> {{$products}} </div>
-        <div>{{$products}}€</div>
-        <img src="{{$products}}" >
-    @endfor
-    </section>
-    <section>
-    @for($i = 0; $i<4 ; $i++)
-        <div> {{$products}} </div>
-        <div>{{$products}}€</div>
-        <img src="{{$products}}" >
-    @endfor
+    @foreach($products as $product)
+        <div> {{$product['name']}} </div>
+        <div>{{$product['description']}}</div>
+        <div>{{$product['price']}} €</div>
+        <img src="{{$product['img']}}" >
+        <div>{{$product['id']}}</div>
+        <a href='/product/{{$product['id']}}'><button >voir le produit</button></a>
+    @endforeach
     </section>
     <x-footer/>
 </body>

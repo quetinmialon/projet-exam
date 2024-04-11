@@ -26,8 +26,7 @@ class ContactFormController extends Controller
 
         // Envoi du mail
         $this->sendMailService->sendMail($name, $email, $msg);
-
-        // Réinitialisation des champs du formulaire
+        // redirection
         return redirect('contactMail');
     }
 

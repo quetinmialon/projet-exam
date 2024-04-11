@@ -1,4 +1,4 @@
-<div>
+
 <div>
 @if (session()->has('text'))
 	<p>{{ session('text') }}</p>
@@ -34,4 +34,4 @@
 </form>
 
 </div>
-</div>
+
