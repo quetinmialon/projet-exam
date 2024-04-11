@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\shared;
 
 abstract class Controller
 {
-    
+
 }

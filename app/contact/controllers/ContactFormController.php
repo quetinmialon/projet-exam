@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\contact\controllers;
 
+use App\contact\services\SendMailService;
+use App\shared\Controller;
 use Illuminate\Http\Request;
-use App\Services\SendMailService; // Assurez-vous que le chemin vers le service est correct
+
+// Assurez-vous que le chemin vers le service est correct
 
 
 class ContactFormController extends Controller

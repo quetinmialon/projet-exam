@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use App\Services\UsersService;
+use App\auth\services\UsersService;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -14,7 +14,7 @@ class header extends Component
      */
     public function __construct(private UsersService $userService)
     {
-        
+
     }
 
     /**

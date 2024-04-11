@@ -1,11 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ContactFormController;
+use App\auth\controllers\UserController;
+use App\contact\controllers\ContactFormController;
+use App\products\controllers\ProductController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-
-
 
 Route::get('/', [ProductController::class,'index']);
 Route::get('/about',function(){return view("about");});
@@ -23,8 +21,8 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 
-Route::group(['middleware' => 'auth'], function () {    
-    Route::get('/logout', [UserController::class, 'logout'])->name('logout');  
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
     Route::get('/contactUs',[ContactFormController::class,'showContactForm']);
     Route::post('/contactUs',[ContactFormController::class,'submit'])->name('send.mail');
 });
@@ -32,5 +30,5 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Route::group(['middleware' => 'admin'], function () {
-   
+
 });

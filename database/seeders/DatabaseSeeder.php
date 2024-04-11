@@ -1,10 +1,11 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Product;
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\auth\models\User;
+use App\products\models\Product;
 use Illuminate\Database\Seeder;
+
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +27,6 @@ class DatabaseSeeder extends Seeder
             'price' => 25,
             'description' => "this is a brieve description of this unexisting product",
             'img' => ''
-        ]); 
+        ]);
     }
 }

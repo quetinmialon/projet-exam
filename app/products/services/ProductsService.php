@@ -1,7 +1,8 @@
 <?php
-namespace App\services;
+namespace App\products\services;
 
-use App\Models\Product;
+use App\products\models\Product;
+
 class ProductsService{
     public function getProducts(){
         return Product::all();

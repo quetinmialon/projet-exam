@@ -1,7 +1,8 @@
 <?php
-namespace App\services;
+namespace App\contact\services;
+use App\contact\models\ContactMail;
 use Illuminate\Support\Facades\Mail;
-use App\Models\ContactMail;
+
 class SendMailService{
     public function sendMail($name, $email, $msg){
                 // Envoie du mail

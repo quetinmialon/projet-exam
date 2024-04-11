@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Providers;
+namespace App\shared;
 
-use App\services\UsersService;
+use App\auth\services\UsersService;
+use App\contact\services\SendMailService;
+use App\products\services\ProductsService;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use App\services\ProductsService;
-use App\services\SendMailService;
 
 
 class AppServiceProvider extends ServiceProvider

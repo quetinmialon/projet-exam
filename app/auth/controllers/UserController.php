@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\auth\controllers;
 
-use App\Services\UsersService;
+use App\auth\services\UsersService;
+use App\shared\Controller;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
@@ -16,14 +16,14 @@ class UserController extends Controller
     }
 
     public function login(Request $request)
-    {        
+    {
         $credentials = $request->only('email','password');
         $this->userService->login($credentials);
         if($this->userService->checkAuth()){
             return redirect('/');
         }
-        return back()->withInput()->withErrors(['email' => 'Email or password incorrect.']);           
-        
+        return back()->withInput()->withErrors(['email' => 'Email or password incorrect.']);
+
     }
 
     public function logout()
@@ -44,7 +44,7 @@ class UserController extends Controller
         return redirect('/login')->with('success', 'Votre compte a été créé avec succès. Veuillez vous connecter.');
     }
     public function createAdmin(Request $request)
-    {    
+    {
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -54,7 +54,7 @@ class UserController extends Controller
         $data['admin'] = true;
 
         $this->userService->createAdmin($data);
-    
+
         return redirect('/dashboard')->with('success', 'Nouvel administrateur créé avec succès.');
     }
     public function showRegisterForm (){

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\products\controllers;
 
+use App\products\services\ProductsService;
+use App\shared\Controller;
 use Illuminate\Http\Request;
-use App\services\ProductsService;
 
 class ProductController extends Controller
 {
@@ -21,6 +22,6 @@ class ProductController extends Controller
         $id = $request->id;
         // dd($id);
         return view('product', ["product"=> $this->productService->getOneProduct($id)]);
-       
+
     }
 }
