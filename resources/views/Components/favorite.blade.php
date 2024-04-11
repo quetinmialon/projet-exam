@@ -1,3 +1,3 @@
 <div>
-    <button>favoris</button>
+    <button onclick="addToFavorite({{$productId}})">favoris</button>
 </div>
