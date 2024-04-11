@@ -35,4 +35,7 @@ class UsersService
     public function checkAuth() : bool {
         return Auth::check();
     }
+    public function getCurrentUserId(){
+        return Auth::getUser()->getAuthIdentifier();
+    }
 }

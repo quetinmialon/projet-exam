@@ -7,7 +7,7 @@ use App\contact\services\SendMailService;
 use App\products\services\ProductsService;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-
+use App\favorites\services\FavoriteService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(ProductsService::class, function(Application $app){return new ProductsService();});
         $this->app->singleton(SendMailService::class, function(Application $app){return new SendMailService();});
         $this->app->singleton(UsersService::class, function (Application $app){return new UsersService();});
+        $this->app->singleton(FavoriteService::class, function(Application $app){return new FavoriteService();});
     }
 
 
