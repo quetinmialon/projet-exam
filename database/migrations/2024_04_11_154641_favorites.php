@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('favorites', function(Blueprint $table){
 
             $table ->integer('userId');
-            $table ->integer('productId');
+            $table ->string('productId');
             $table->foreign('userId')->references('id')->on('users');
             $table->foreign('productId')->references('id')->on('products');
+            $table ->timestamps();
 
         });
         //

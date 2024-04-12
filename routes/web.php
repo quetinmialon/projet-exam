@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/contactUs',[ContactFormController::class,'showContactForm']);
     Route::post('/contactUs',[ContactFormController::class,'submit'])->name('send.mail');
     Route::post('/product/{id}/favorite',[FavoriteController::class,'addToFavorite']);
+    Route::post('/product/{id}/favorite/remove',[FavoriteController::class,'removeFromFavorites']);
 });
 
 

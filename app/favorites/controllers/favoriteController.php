@@ -6,6 +6,7 @@ use App\auth\services\UsersService;
 use App\favorites\services\FavoriteService;
 use App\shared\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class FavoriteController extends Controller
 {
@@ -15,12 +16,20 @@ class FavoriteController extends Controller
     }
     
     public function addToFavorite(Request $request){
-        $productId = $request->input('productId');
+        $productId = $request->id;
+        
         $userId = $this->authservice->getCurrentUserId();
-        $this->favoriteService->addToFavorite($userId,$productId);
+
+        $this->favoriteService->addToFavorite($userId, $productId);
+        return response()->json(['success' => true]);
     }
     /**
      * Get the view / contents that represent the component.
      */
-
+    public function removeFromFavorites(Request $request){
+        $productId = $request->id;
+        $userId = $this->authservice->getCurrentUserId();
+        $this->favoriteService->removeFromFavorites($userId, $productId);
+        return response()->json(['success' => true]);
+    }
 }

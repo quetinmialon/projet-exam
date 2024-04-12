@@ -36,6 +36,10 @@ class UsersService
         return Auth::check();
     }
     public function getCurrentUserId(){
-        return Auth::getUser()->getAuthIdentifier();
+        $User = Auth::getUser();
+        if (!$User){
+            return $User;
+        }
+        return $User->getAuthIdentifier();
     }
 }
