@@ -1,6 +1,6 @@
 <?php
 
-namespace App\favorites\models;
+namespace App\favorites\infrastructure\gateways\models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

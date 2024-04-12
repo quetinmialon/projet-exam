@@ -2,7 +2,7 @@
 
 use App\auth\controllers\UserController;
 use App\contact\controllers\ContactFormController;
-use App\favorites\controllers\FavoriteController;
+use App\favorites\infrastructure\client\controllers\FavoriteController;
 use App\products\controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 

@@ -5,7 +5,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
-use App\favorites\services\FavoriteService;
+use App\favorites\work_application\services\FavoriteService;
 use App\auth\services\UsersService;
 
 class favorite extends Component
@@ -17,7 +17,7 @@ class favorite extends Component
     {
         //
     }
-    
+
     public function addToFavorite(){
         $userId = $this->authservice->getCurrentUserId();
         $this->favoriteService->addToFavorite($userId, strval($this->productId));
@@ -26,12 +26,12 @@ class favorite extends Component
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
-    {   
+    {
         $userId = $this->authservice->getCurrentUserId();
         if (!$userId){
             return view('components.favorite-Logout');
         }
-        
+
         return view('components.favorite', [
             'isFavorite' =>  $this->favoriteService->isProductInFavorites($userId,strval($this->productId))
         ]);

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\favorites\controllers;
+namespace App\favorites\infrastructure\client\controllers;
 
 use App\auth\services\UsersService;
-use App\favorites\services\FavoriteService;
+use App\favorites\work_application\services\FavoriteService;
 use App\shared\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -14,10 +14,10 @@ class FavoriteController extends Controller
     {
         //
     }
-    
+
     public function addToFavorite(Request $request){
         $productId = $request->id;
-        
+
         $userId = $this->authservice->getCurrentUserId();
 
         $this->favoriteService->addToFavorite($userId, $productId);
