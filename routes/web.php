@@ -1,6 +1,7 @@
 <?php
 
 use App\auth\controllers\UserController;
+use App\basket\infrastructure\client\controller\BasketController;
 use App\contact\controllers\ContactFormController;
 use App\favorites\infrastructure\client\controllers\FavoriteController;
 use App\products\infrastructure\client\controllers\ProductController;
@@ -29,6 +30,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/contactUs',[ContactFormController::class,'submit'])->name('send.mail');
     Route::post('/product/{id}/favorite',[FavoriteController::class,'addToFavorite']);
     Route::post('/product/{id}/favorite/remove',[FavoriteController::class,'removeFromFavorites']);
+    Route::get('/basket/{productId}/{quantity}',[BasketController::class,'addToBasket']);
+    Route::get('/basket/clear',[BasketController::class,'clear']);
 });
 
 
