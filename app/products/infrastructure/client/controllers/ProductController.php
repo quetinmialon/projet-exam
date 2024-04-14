@@ -1,8 +1,8 @@
 <?php
 
-namespace App\products\controllers;
+namespace App\products\infrastructure\client\controllers;
 
-use App\products\services\ProductsService;
+use App\products\work_application\services\ProductsService;
 use App\shared\Controller;
 use Illuminate\Http\Request;
 

@@ -28,7 +28,7 @@
 <?php unset($__componentOriginal2a2e454b2e62574a80c8110e5f128b60); ?>
 <?php endif; ?>
     <div>
-        game's rules
+        about the game
     </div>
     <?php if (isset($component)) { $__componentOriginal8a8716efb3c62a45938aca52e78e0322 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal8a8716efb3c62a45938aca52e78e0322 = $attributes; } ?>
@@ -51,4 +51,4 @@
 <?php unset($__componentOriginal8a8716efb3c62a45938aca52e78e0322); ?>
 <?php endif; ?>
 </body>
-</html><?php /**PATH C:\laragon\www\projet-exam\resources\views/rules.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\laragon\www\projet-exam\resources\views/about.blade.php ENDPATH**/ ?>

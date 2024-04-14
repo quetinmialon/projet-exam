@@ -4,14 +4,14 @@ namespace App\favorites\work_application\services;
 
 use App\favorites\work_application\entities\Favorite;
 use App\favorites\work_application\gateways\FavoritesRepository;
-use App\products\models\Product;
+use App\products\work_application\gateways\ProductRepository;
 
 class FavoriteService{
 
-    public function __construct(private FavoritesRepository $favoritesRepository) {}
+    public function __construct(private FavoritesRepository $favoritesRepository, private ProductRepository $productRepository) {}
 
     public function addToFavorite($userId, $productId) {
-        $product = Product::findOrFail($productId);
+        $product = $this->productRepository->getById($productId);
         if (!$product) {
             return;
         }

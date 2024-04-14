@@ -1,7 +1,7 @@
 <?php
-namespace App\products\services;
+namespace App\products\work_application\services;
 
-use App\products\models\Product;
+use App\products\infrastructure\gateways\models\Product;
 
 class ProductsService{
     public function getProducts(){

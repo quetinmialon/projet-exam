@@ -3,7 +3,7 @@
 use App\auth\controllers\UserController;
 use App\contact\controllers\ContactFormController;
 use App\favorites\infrastructure\client\controllers\FavoriteController;
-use App\products\controllers\ProductController;
+use App\products\infrastructure\client\controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductController::class,'index']);
