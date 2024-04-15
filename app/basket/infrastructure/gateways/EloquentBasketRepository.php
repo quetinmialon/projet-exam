@@ -1,6 +1,7 @@
 <?php 
 
 namespace App\basket\infrastructure\gateways;
+use App\basket\infrastructure\models\BasketModel;
 use App\basket\infrastructure\models\BasketProductModel;
 use App\basket\work_application\entities\BasketProduct;
 use App\basket\work_application\gateways\BasketRepository;
@@ -11,15 +12,22 @@ class EloquentBasketRepository implements BasketRepository{
     public function getByUser(int $userId): Basket
     {
         $productsInDb = BasketProductModel::where('userId','=',$userId)->get();
-        // dd($productsInDb);
+        $basketInDb = BasketModel::where('userId','=',$userId)->first();
+        if(!$basketInDb){
+            $promoCode = null;
+        }else{
+            $promoCode = $basketInDb['promoCodeLabel'];
+        }
         $products = array_map(function($product){
             return new BasketProduct($product['userId'],$product['productId'],$product['quantity']);
         },$productsInDb->toArray());
-        return new Basket($userId,$products);
+        return new Basket($userId,$products, $promoCode);
     }
     public function save(Basket $basket):void
     {
         $snapshot = $basket->snapshot();
+        
+
         $products = array_map(function ($product){
             return [
                 'userId'=>$product['userId'],
@@ -29,6 +37,15 @@ class EloquentBasketRepository implements BasketRepository{
         },$snapshot['products']);
         BasketProductModel::where('userId','=',$snapshot['userId'])->delete();
         BasketProductModel::insert($products);
+
+        BasketModel::where('userId','=',$snapshot['userId'])->delete();
+
+        BasketModel::Create([
+            'userId'=>$snapshot['userId'],
+            'promoCodeLabel'=>$snapshot['promoCodeLabel']
+        ]);
     }
+
+
 
 }

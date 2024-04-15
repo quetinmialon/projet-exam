@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 use App\auth\models\User;
+use App\basket\infrastructure\models\PromoCodeModel;
 use App\products\infrastructure\gateways\models\Product;
 use Illuminate\Database\Seeder;
 
@@ -16,18 +17,30 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::create([
+        User::Create([
             'name' => 'Quentin',
             'email' => 'quentin@example.com',
             'admin' => true,
             'password' => 'password'
         ]);
-        Product::create([
+        Product::Create([
             'id' => '1',
             'name' => 'test_product',
             'price' => 25,
             'description' => "this is a brieve description of this unexisting product",
             'img' => ''
         ]);
+        PromoCodeModel::Create(
+            [
+                'label'=>'promotion',
+                'value'=>20
+            ]
+            );
+            PromoCodeModel::Create(
+                [
+                    'label'=>'promote',
+                    'value'=>24
+                ]
+                );
     }
 }

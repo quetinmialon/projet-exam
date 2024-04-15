@@ -16,4 +16,12 @@ class BasketProduct{
     public function addQuantity(int $quantity){
         $this->quantity += $quantity;
     }
+
+    public function reduceQuantity(int $quantity){
+        $this->quantity -= $quantity;
+    }
+
+    public function isEmpty(){
+        return $this->quantity <= 0;
+    }
 }

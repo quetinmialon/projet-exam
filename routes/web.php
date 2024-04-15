@@ -32,6 +32,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/product/{id}/favorite/remove',[FavoriteController::class,'removeFromFavorites']);
     Route::get('/basket/{productId}/{quantity}',[BasketController::class,'addToBasket']);
     Route::get('/basket/clear',[BasketController::class,'clear']);
+    Route::get('/basket/{productId}/{quantity}/reduce',[BasketController::class,'reduceOneProduct']);
+    Route::get('/basket-delete/{productId}',[BasketController::class,'deleteOneProduct']);
+    Route::get('/basket-promoCode/apply/{promoCodeLabel}',[BasketController::class,'applyPromoCodeToBasket']);
+    Route::get('/basket-promoCode/remove',[BasketController::class,'removePromoCodeInBasket']);
 });
 
 
