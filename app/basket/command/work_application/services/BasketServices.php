@@ -4,6 +4,7 @@ namespace App\basket\work_application\services;
 use App\products\work_application\gateways\ProductRepository;
 use App\basket\work_application\gateways\BasketRepository;
 use App\basket\work_application\gateways\PromoCodeRepository;
+use App\basket\work_application\entities\Basket;
 
 class BasketServices{
     public function __construct(private ProductRepository $productRepository, private BasketRepository $basketRepository, private PromoCodeRepository $promoCodeRepository){}
@@ -65,5 +66,10 @@ class BasketServices{
         $basket = $this->basketRepository->getByUser($userId);
         $basket->removePromoCode();
         $this->basketRepository->save($basket);
+    }
+
+    public function getBasketOfCurrentUser(int $userId):Basket{
+        $basket = $this->basketRepository->getByUser($userId);
+        return($basket);
     }
 }
