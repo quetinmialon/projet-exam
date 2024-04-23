@@ -17,4 +17,13 @@ class EloquentProductsRepository implements ProductRepository {
        return new WorkingProduct($product['id'],$product['price'],$product['name'],$product['description'],$product['img']);
 
     }
+
+    public function save(WorkingProduct $product):void{
+        Product::updateOrCreate(
+            [
+                'id' => $product->id,
+            ],
+            $product->snapshot()
+        );
+    }
 }

@@ -28,7 +28,11 @@ class QueryBasketServices{
         if($promoCode){
             $discount = $promoCode['value'];
             if($promoCode['type']=='flat'){
-                return $total-$discount;
+                $total = $total - $discount;
+                if($total<0){
+                    $total = 0;
+                }
+                return $total;
             }
             return $total-($total*$discount/100);            
         }

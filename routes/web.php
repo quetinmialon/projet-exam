@@ -35,10 +35,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/basket/clear',[BasketController::class,'clear']);
     Route::post('/basket/{productId}/{quantity}/reduce',[BasketController::class,'reduceOneProduct']);
     Route::post('/basket-delete/{productId}',[BasketController::class,'deleteOneProduct']);
-    Route::get('/basket-promoCode/apply/{promoCodeLabel}',[BasketController::class,'applyPromoCodeToBasket']);
-    Route::get('/basket-promoCode/remove',[BasketController::class,'removePromoCodeInBasket']);
+    Route::post('/basket-promoCode/apply/{promoCodeLabel}',[BasketController::class,'applyPromoCodeToBasket']);
+    Route::post('/basket-promoCode/remove',[BasketController::class,'removePromoCodeInBasket']);
     Route::get('/basket/loadingView',function (){return view('components.basket');});
     Route::get('/basket',[QueryBasketController::class,'getTheBasketOfCurrentUser']);
+    Route::post('/backOffice/addProduct',[ProductController::class,'addProduct']);
+    Route::get('/backOffice/addProductForm',[ProductController::class,'getProductForm']);
+    Route::get('/backOffice/products/{productId}',[ProductController::class,'getProductById']);
 });
 
 

@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Quentin',
             'email' => 'quentin@example.com',
             'admin' => true,
-            'password' => 'password'
+            'password' => 'password',
         ]);
         Product::Create([
             'id' => '1',

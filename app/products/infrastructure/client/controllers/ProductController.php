@@ -20,8 +20,22 @@ class ProductController extends Controller
     }
     public function getById(Request $request){
         $id = $request->id;
-        // dd($id);
         return view('product', ["product"=> $this->productService->getOneProduct($id)]);
 
     }
-}
+
+    public function addProduct(Request $request){
+        $name = $request->input('name');
+        $price = $request->input('price');
+        $productId = $this->productService->addProduct($name, $price);
+        return redirect('/backOffice/products/'.$productId);
+    }
+
+    public function getProductForm(){
+        return view('/backOffice/products/addProductForm');
+    }
+
+    public function getProductById(Request $request){
+        $id = $request->productId;
+        return view('/backOffice/products/product', ["product"=> $this->productService->getOneProduct($id)]);
+}}

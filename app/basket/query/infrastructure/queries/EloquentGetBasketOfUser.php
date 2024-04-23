@@ -5,8 +5,6 @@ namespace App\basket\query\infrastructure\queries;
 use App\basket\command\infrastructure\models\BasketModel;
 use App\basket\command\infrastructure\models\BasketProductModel;
 use App\basket\command\infrastructure\models\PromoCodeModel;
-use App\basket\query\work_application\models\Basket;
-use App\basket\query\work_application\models\BasketProduct;
 use App\basket\query\work_application\queries\GetBasketOfUser;
 use App\products\infrastructure\gateways\models\Product;
 

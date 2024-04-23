@@ -8,12 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     public $fillable = [
+        'id',
         'price',
         'description',
         'img',
         'name'
 
     ];
+
+    public $incrementing = false;
 
 
 
