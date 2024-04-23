@@ -1,6 +1,6 @@
 <?php
 
-namespace App\basket\work_application\entities;
+namespace App\basket\command\work_application\entities;
 
 class BasketProduct{
     public function __construct(private int $userId, public string $productId,private int $quantity){}

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\basket\work_application\services;
+namespace App\basket\command\work_application\services;
 use App\products\work_application\gateways\ProductRepository;
-use App\basket\work_application\gateways\BasketRepository;
-use App\basket\work_application\gateways\PromoCodeRepository;
-use App\basket\work_application\entities\Basket;
+use App\basket\command\work_application\gateways\BasketRepository;
+use App\basket\command\work_application\gateways\PromoCodeRepository;
+use App\basket\command\work_application\entities\Basket;
 
 class BasketServices{
     public function __construct(private ProductRepository $productRepository, private BasketRepository $basketRepository, private PromoCodeRepository $promoCodeRepository){}
@@ -44,7 +44,7 @@ class BasketServices{
     }
 
     public function removeOneProduct($userId,$productId){
-        
+
         $basket = $this->basketRepository->getByUser($userId);
         $basket->removeProduct($productId);
         $this->basketRepository->save($basket);

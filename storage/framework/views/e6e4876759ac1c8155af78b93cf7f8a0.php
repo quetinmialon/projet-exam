@@ -32,8 +32,11 @@
         </div>
 
         <div class="flex flex-row p-2 self-center gap-2">
-            <button class="p-2 "><img src="/img/panier.png" alt="logo panier" class="h-12 w-12 self-center"></button>
-            <a href="<?php echo e($user? "/logout" : "/login"); ?>" class="p-2 "><img src="/img/utilisateur.png" alt="logo profil" class="h-12 w-12 self-center" ></a>
+            <a href="/basket" id="btn-panier" class="p-2 "><img src="/img/panier.png" alt="logo panier" class="h-12 w-12 self-center"></a>
+            <a href="/logout" class="p-2 "><img src="/img/utilisateur.png" alt="logo profil" class="h-12 w-12 self-center" ></a>
         </div>
     </div>
+
+    
+
 <?php /**PATH C:\laragon\www\projet-exam\resources\views/components/header.blade.php ENDPATH**/ ?>

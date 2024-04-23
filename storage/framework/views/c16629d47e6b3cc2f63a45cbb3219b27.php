@@ -25,17 +25,14 @@
         <div>
             <form method="GET" url='/'>
                 <label for="search">
-                    <input type="text" name="search" value="{{app('request')->input('search')}}">
+                    <input type="text" name="search" value="<?php echo e(app('request')->input('search')); ?>">
                 </label>
                 <button>recherche</button>
             </form>
         </div>
 
         <div class="flex flex-row p-2 self-center gap-2">
-            <a href="/basket" id="btn-panier" class="p-2 "><img src="/img/panier.png" alt="logo panier" class="h-12 w-12 self-center"></a>
-            <a href="/logout" class="p-2 "><img src="/img/utilisateur.png" alt="logo profil" class="h-12 w-12 self-center" ></a>
+            <a href="/login" class="p-2 "><img src="/img/utilisateur.png" alt="logo profil" class="h-12 w-12 self-center" ></a>
         </div>
     </div>
-
-    
-
+<?php /**PATH C:\laragon\www\projet-exam\resources\views/components/header-logout.blade.php ENDPATH**/ ?>

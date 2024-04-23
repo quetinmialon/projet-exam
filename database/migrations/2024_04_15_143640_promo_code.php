@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('label')->primary();
             $table->integer('value');            
             $table->timestamps();
+            $table->string('type');
         });
 
         Schema::create('basket',function(Blueprint $table){

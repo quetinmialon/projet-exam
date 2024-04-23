@@ -1,7 +1,8 @@
 <?php
 
 use App\auth\controllers\UserController;
-use App\basket\infrastructure\client\controller\BasketController;
+use App\basket\command\infrastructure\client\controller\BasketController;
+use App\basket\query\infrastructure\client\controller\QueryBasketController;
 use App\contact\controllers\ContactFormController;
 use App\favorites\infrastructure\client\controllers\FavoriteController;
 use App\products\infrastructure\client\controllers\ProductController;
@@ -30,12 +31,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/contactUs',[ContactFormController::class,'submit'])->name('send.mail');
     Route::post('/product/{id}/favorite',[FavoriteController::class,'addToFavorite']);
     Route::post('/product/{id}/favorite/remove',[FavoriteController::class,'removeFromFavorites']);
-    Route::get('/basket/{productId}/{quantity}',[BasketController::class,'addToBasket']);
-    Route::get('/basket/clear',[BasketController::class,'clear']);
-    Route::get('/basket/{productId}/{quantity}/reduce',[BasketController::class,'reduceOneProduct']);
-    Route::get('/basket-delete/{productId}',[BasketController::class,'deleteOneProduct']);
+    Route::post('/basket/{productId}/{quantity}',[BasketController::class,'addToBasket'])->name('basket.add');
+    Route::post('/basket/clear',[BasketController::class,'clear']);
+    Route::post('/basket/{productId}/{quantity}/reduce',[BasketController::class,'reduceOneProduct']);
+    Route::post('/basket-delete/{productId}',[BasketController::class,'deleteOneProduct']);
     Route::get('/basket-promoCode/apply/{promoCodeLabel}',[BasketController::class,'applyPromoCodeToBasket']);
     Route::get('/basket-promoCode/remove',[BasketController::class,'removePromoCodeInBasket']);
+    Route::get('/basket/loadingView',function (){return view('components.basket');});
+    Route::get('/basket',[QueryBasketController::class,'getTheBasketOfCurrentUser']);
 });
 
 

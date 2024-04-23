@@ -1,7 +1,7 @@
 <?php
 
-namespace App\basket\work_application\gateways;
-use App\basket\work_application\entities\Basket;
+namespace App\basket\command\work_application\gateways;
+use App\basket\command\work_application\entities\Basket;
 
 
 interface BasketRepository{

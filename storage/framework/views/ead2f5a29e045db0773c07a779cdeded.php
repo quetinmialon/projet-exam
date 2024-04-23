@@ -50,6 +50,26 @@
 <?php $component = $__componentOriginal62d08f292a525f69219833e02dcd746d; ?>
 <?php unset($__componentOriginal62d08f292a525f69219833e02dcd746d); ?>
 <?php endif; ?>
+        <?php if (isset($component)) { $__componentOriginaldcda4c6affaab0b33a4e4640b5ebbcd9 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginaldcda4c6affaab0b33a4e4640b5ebbcd9 = $attributes; } ?>
+<?php $component = App\View\Components\BasketButon::resolve(['productId' => $product['id']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('basketButon'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\View\Components\BasketButon::class))->getConstructor()): ?>
+<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginaldcda4c6affaab0b33a4e4640b5ebbcd9)): ?>
+<?php $attributes = $__attributesOriginaldcda4c6affaab0b33a4e4640b5ebbcd9; ?>
+<?php unset($__attributesOriginaldcda4c6affaab0b33a4e4640b5ebbcd9); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginaldcda4c6affaab0b33a4e4640b5ebbcd9)): ?>
+<?php $component = $__componentOriginaldcda4c6affaab0b33a4e4640b5ebbcd9; ?>
+<?php unset($__componentOriginaldcda4c6affaab0b33a4e4640b5ebbcd9); ?>
+<?php endif; ?>
         <div> <?php echo e($product['name']); ?> </div>
         <div><?php echo e($product['description']); ?></div>
         <div><?php echo e($product['price']); ?> €</div>

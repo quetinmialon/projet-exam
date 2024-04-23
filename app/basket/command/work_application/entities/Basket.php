@@ -1,6 +1,6 @@
 <?php
 
-namespace App\basket\work_application\entities;
+namespace App\basket\command\work_application\entities;
 
 class Basket{
     public function __construct(private int $userId, private array $products, private ?String $promoCodeLabel){}
@@ -39,21 +39,21 @@ class Basket{
         ];
     }
     private function getProductById(string $productId):BasketProduct|null{
-        
+
             foreach ($this->products as $product) {
                 if ($product->productId === $productId) {
-                    return $product; 
+                    return $product;
                 }
             }
-            return null; 
+            return null;
         }
-    
+
     public function clear(){
         $this->products = [];
     }
 
-    public function removeProduct(string $productId):void{  
-        
+    public function removeProduct(string $productId):void{
+
         $this->products = array_filter($this->products,function($product) use ($productId) {
             if($product->productId === $productId){
                 return false;
@@ -70,5 +70,4 @@ class Basket{
         $this->promoCodeLabel = null;
     }
 }
-    
- 
+

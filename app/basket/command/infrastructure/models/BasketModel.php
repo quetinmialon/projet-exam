@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace App\basket\infrastructure\models;
+namespace App\basket\command\infrastructure\models;
 use Illuminate\Database\Eloquent\Model;
 
 class BasketModel extends Model{
@@ -10,5 +10,5 @@ class BasketModel extends Model{
         'userId',
         'promoCodeLabel'
     ];
-    
+
 }

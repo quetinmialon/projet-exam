@@ -12,6 +12,7 @@
     <section>
     @foreach($products as $product)
         <x-favorite :productId="$product['id']"/>
+        <x-basketButon :productId="$product['id']"/>
         <div> {{$product['name']}} </div>
         <div>{{$product['description']}}</div>
         <div>{{$product['price']}} €</div>

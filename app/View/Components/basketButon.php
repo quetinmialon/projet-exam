@@ -7,14 +7,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class header extends Component
+class basketButon extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(private UsersService $userService)
+    public function __construct(private UsersService $authservice,public $productId)
     {
-
+        //
     }
 
     /**
@@ -22,10 +22,11 @@ class header extends Component
      */
     public function render(): View|Closure|string
     {
-        $user = $this->userService->checkAuth();
-        if(!$user){
-            return view ('components.header-logout');
-        }
-        return view('components.header',['user'=> $user ]);
+        $user = $this->authservice->getCurrentUserId();
+        return view('components.basketButon',[
+            "userId"=>$user,
+            "productId"=>$this->productId
+
+        ]);
     }
 }

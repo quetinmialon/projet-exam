@@ -1,9 +1,9 @@
 <?php
 
-namespace App\basket\infrastructure\client\controller;
+namespace App\basket\command\infrastructure\client\controller;
 
 use App\auth\services\UsersService;
-use App\basket\work_application\services\BasketServices;
+use App\basket\command\work_application\services\BasketServices;
 use App\shared\Controller;
 use Illuminate\Http\Request;
 
