@@ -11,6 +11,6 @@ class QueryBasketController extends Controller {
     public function __construct(private UsersService $usersService, private QueryBasketServices $queryBasketServices){}
     public function getTheBasketOfCurrentUser(){
         $userId = $this->usersService->getCurrentUserId();
-        return(view('basket',['basket'=>($this->queryBasketServices->getBasket($userId))]));
+        return(view('auth.basket',['basket'=>($this->queryBasketServices->getBasket($userId))]));
     }
 }
