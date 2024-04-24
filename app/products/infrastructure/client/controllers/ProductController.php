@@ -14,13 +14,13 @@ class ProductController extends Controller
     public function index(Request $request){
         $name = $request->input('search');
         if($name){
-            return view('guest.home',["products"=> $this->productService->getProductSearched($name)]);
+            return view('home',["products"=> $this->productService->getProductSearched($name)]);
         }
-       return view('guest.home',["products"=> $this->productService->getProducts()]);
+       return view('home',["products"=> $this->productService->getProducts()]);
     }
     public function getById(Request $request){
         $id = $request->id;
-        return view('guest.product', ["product"=> $this->productService->getOneProduct($id)]);
+        return view('product', ["product"=> $this->productService->getOneProduct($id)]);
 
     }
 
