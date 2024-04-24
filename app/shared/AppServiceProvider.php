@@ -9,6 +9,11 @@ use App\basket\query\infrastructure\queries\EloquentGetBasketOfUser;
 use App\basket\command\work_application\gateways\BasketRepository;
 use App\basket\command\work_application\gateways\PromoCodeRepository;
 use App\basket\command\work_application\services\BasketServices;
+use App\basket\command\work_application\services\PromoCodeServices;
+use App\basket\query\infrastructure\queries\EloquentGetAllPromoCodes;
+use App\basket\query\infrastructure\queries\EloquentGetPromoCodeByLabel;
+use App\basket\query\work_application\queries\GetAllPromoCodes;
+use App\basket\query\work_application\queries\GetPromoCodeByLabel;
 use App\contact\services\SendMailService;
 use App\favorites\infrastructure\gateways\EloquentFavoritesRepository;
 use App\favorites\work_application\gateways\FavoritesRepository;
@@ -36,6 +41,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(BasketServices::class,function(Application $app){return new BasketServices($app->get(ProductRepository::class),$app->get(BasketRepository::class),$app->get(PromoCodeRepository::class));});
         $this->app->singleton(GetBasketOfUser::class,function (Application $app){return new EloquentGetBasketOfUser();});
         $this->app->singleton(QueryBasketServices::class, function(Application $app){return new QueryBasketServices($app->get(GetBasketOfUser::class));});
+        $this->app->singleton(PromoCodeServices::class, function(Application $app){return new PromoCodeServices($app->get(PromoCodeRepository::class));});
+        $this->app->singleton(GetPromoCodeByLabel::class, function(Application $app){return new EloquentGetPromoCodeByLabel();});
+        $this->app->singleton(GetAllPromoCodes::class, function(Application $app){return new EloquentGetAllPromoCodes();});
     }
 
 

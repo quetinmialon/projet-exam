@@ -6,4 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 class PromoCodeModel extends Model{
     protected $table = 'promoCode';
 
+    protected $fillable = [
+        'label',
+        'value',
+        'type'
+    ];
+
 }

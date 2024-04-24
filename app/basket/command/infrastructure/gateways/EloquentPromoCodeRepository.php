@@ -11,7 +11,12 @@ class EloquentPromoCodeRepository implements PromoCodeRepository{
 
         $promoCodeInDb = PromoCodeModel::where('label','=',$codePromoLabel)->first();
         if(!$promoCodeInDb){return null;}
-        return new PromoCode($codePromoLabel);
+        return new PromoCode($codePromoLabel, $promoCodeInDb['type'],$promoCodeInDb['value']);
 
+    }
+
+    public function save(PromoCode $promoCode):void{
+        $snapshot = $promoCode->snapshot();
+        PromoCodeModel::updateOrCreate(['label'=> $snapshot['label']],$snapshot);
     }
 }

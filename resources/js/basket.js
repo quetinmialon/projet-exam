@@ -16,6 +16,7 @@ window.updateActionAndSubmit = function(i) {
             if (response.ok) {
                 
                 console.log('Produit ajouté au panier avec succès.');
+                location.reload();
             } else {
                 
                 console.error('Erreur lors de l\'ajout du produit au panier.');
@@ -24,7 +25,7 @@ window.updateActionAndSubmit = function(i) {
         .catch(error => {
             console.error('Erreur lors de la communication avec le serveur:', error);
         });
-        location.reload();
+        
         
     } 
 
@@ -40,6 +41,7 @@ window.deleteProductFromBasket = function(i){
         if (response.ok) {
                 
             console.log('Produit supprimé du panier');
+            location.reload();
         } else {
             
             console.error('Erreur lors de la suppression du produit au panier.');
@@ -48,9 +50,34 @@ window.deleteProductFromBasket = function(i){
     .catch(error => {
         console.error('Erreur lors de la communication avec le serveur:', error);
     });
-    location.reload();
+    
 }
     
 window.applyPromoCode = function(){
-
+    let label = document.getElementById("inputPromoCode").value;
+    fetch('/basket-promoCode/apply/'+label, {
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+    }
+})
+    .then(response =>{
+        if (response.ok) {
+                
+            console.log('code Promo appliqué');
+            location.reload();
+        } else {
+            
+            console.error('Erreur lors de l\'application du code Promo.');
+        }
+    })
+    .catch(error => {
+        console.error('Erreur lors de la communication avec le serveur:', error);
+    });
+      
+    
 }
+
+window.deletePromoCode = function(){
+
+};

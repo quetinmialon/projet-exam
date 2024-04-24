@@ -13,4 +13,6 @@ class QueryBasketController extends Controller {
         $userId = $this->usersService->getCurrentUserId();
         return(view('auth.basket',['basket'=>($this->queryBasketServices->getBasket($userId))]));
     }
+
+    
 }

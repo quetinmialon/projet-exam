@@ -105,4 +105,4 @@
 </body>
 </html>
 
-<?php /**PATH C:\laragon\www\projet-exam\resources\views/basket.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\laragon\www\projet-exam\resources\views/auth/basket.blade.php ENDPATH**/ ?>

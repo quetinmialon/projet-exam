@@ -2,7 +2,9 @@
 
 use App\auth\controllers\UserController;
 use App\basket\command\infrastructure\client\controller\BasketController;
+use App\basket\command\infrastructure\client\controller\PromoCodeController;
 use App\basket\query\infrastructure\client\controller\QueryBasketController;
+use App\basket\query\infrastructure\client\controller\QueryPromoCodeController;
 use App\contact\controllers\ContactFormController;
 use App\favorites\infrastructure\client\controllers\FavoriteController;
 use App\products\infrastructure\client\controllers\ProductController;
@@ -39,9 +41,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/basket-promoCode/remove',[BasketController::class,'removePromoCodeInBasket']);
     Route::get('/basket/loadingView',function (){return view('components.basket');});
     Route::get('/basket',[QueryBasketController::class,'getTheBasketOfCurrentUser']);
+
+    //Route admin 
+
     Route::post('/backOffice/addProduct',[ProductController::class,'addProduct']);
     Route::get('/backOffice/addProductForm',[ProductController::class,'getProductForm']);
     Route::get('/backOffice/products/{productId}',[ProductController::class,'getProductById']);
+    Route::post('/backOffice/promoCodes',[PromoCodeController::class,'addPromoCode']);
+    Route::get('/backOffice/promoCodes-add',[QueryPromoCodeController::class,'getPromoCodesForm']);
+    Route::get('/backOffice/promoCodes/{label}',[QueryPromoCodeController::class,'getPromoCodeByLabel']);
+    Route::get('backOffice/promoCodes',[QueryPromoCodeController::class,'getAllPromoCodes']);
 });
 
 
