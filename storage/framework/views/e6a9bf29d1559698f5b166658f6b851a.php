@@ -60,12 +60,12 @@
             <tfoot>
                 <tr>
                     <th class="px-6 py-4">
-                        <input type="texte" name="promoCode" value="<?php echo e(!empty($basket['promoCode']) ? $basket['promoCode'] : 'entrez un Code Promo'); ?>">
+                        <input id='inputPromoCode'type="texte" name="promoCode" placeholder="entrez votre code Promo" value="<?php echo e($basket['promoCode']? $basket['promoCode']['label'] : ''); ?>">
 
                     </th>
                     <th>
-                        <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-gray-900 hover:cursor-pointer" onclick="">supprimer</button>
-                        <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-gray-900 hover:cursor-pointer" onclick="">appliquer</button>
+                        <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-gray-900 hover:cursor-pointer" onclick="deletePromoCode()">supprimer</button>
+                        <button class="bg-black text-white px-4 py-2 rounded hover:bg-gray-gray-900 hover:cursor-pointer" onclick="applyPromoCode()">appliquer</button>
                     </th>
                     <th class="px-6 py-4 text-left">
                         remise : <?php echo e($basket['remise']); ?>

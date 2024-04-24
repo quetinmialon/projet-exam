@@ -79,5 +79,23 @@ window.applyPromoCode = function(){
 }
 
 window.deletePromoCode = function(){
+    fetch('/basket-promoCode/remove', {
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+    }})
+    .then(response =>{
+        if (response.ok) {
+                
+            console.log('code Promo supprimé');
+            location.reload();
+        } else {
+            
+            console.error('Erreur lors de la suppression du code Promo.');
+        }
+    })
+    .catch(error => {
+        console.error('Erreur lors de la communication avec le serveur:', error);
+    });
 
 };

@@ -1,6 +1,7 @@
 <?php
 namespace App\basket\query\work_application\services;
 use App\auth\services\UsersService;
+use App\basket\command\work_application\entities\PromoCode;
 use App\basket\query\work_application\queries\GetBasketOfUser;
 
 class QueryBasketServices{
@@ -9,14 +10,10 @@ class QueryBasketServices{
     public function getBasket(int $userId){
         $basket = $this->getBasketOfUser->execute($userId);
         $total = $this->getTotalPrice($basket['products']);
-        $label = null;
-        if($basket['promoCode']){
-            $label = $basket['promoCode']['label'];
-        }
         $totalWithDiscount = $this->totalWithDiscount($total,$basket['promoCode']);
         $discount = $total - $totalWithDiscount;
         return [
-            'promoCode'=>$label,
+            'promoCode'=>$basket['promoCode'],
             'products'=>$basket['products'],
             'remise'=>$discount,
             'total'=> $totalWithDiscount
