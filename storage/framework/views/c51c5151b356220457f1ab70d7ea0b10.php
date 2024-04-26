@@ -1,6 +1,6 @@
 <div>
 <head>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 </head>
 
 
@@ -12,4 +12,4 @@
 </div>
 
 </div>
-</div>
+</div><?php /**PATH C:\laragon\www\projet-exam\resources\views/components/favorite-Logout.blade.php ENDPATH**/ ?>

@@ -60,6 +60,7 @@
             <tfoot>
                 <tr>
                     <th class="px-6 py-4">
+                        <form method="post" action=""></form>
                         <input id='inputPromoCode'type="texte" name="promoCode" placeholder="entrez votre code Promo" value="<?php echo e($basket['promoCode']? $basket['promoCode']['label'] : ''); ?>">
 
                     </th>

@@ -1,3 +1,3 @@
 import './bootstrap';
 import './favorite';
-import './basket'
+import './basket';

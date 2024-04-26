@@ -1,9 +1,9 @@
 <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
-    @if (session()->has('text'))
-        <p class="text-green-500 text-center mb-4">{{ session('text') }}</p>
-    @endif
-    <form method="POST" action="{{ route('send.mail') }}" class="space-y-4">
-        @csrf
+    <?php if(session()->has('text')): ?>
+        <p class="text-green-500 text-center mb-4"><?php echo e(session('text')); ?></p>
+    <?php endif; ?>
+    <form method="POST" action="<?php echo e(route('send.mail')); ?>" class="space-y-4">
+        <?php echo csrf_field(); ?>
         <div>
             <label for="name" class="block text-sm font-medium text-gray-700">Nom Complet</label>
             <input type="text" id="name" name="name" placeholder="Votre nom complet" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-lime-200 focus:outline-none focus:border-lime-300">
@@ -21,3 +21,4 @@
 </div>
 
 
+<?php /**PATH C:\laragon\www\projet-exam\resources\views/components/forms/contact-form.blade.php ENDPATH**/ ?>

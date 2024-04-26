@@ -1,20 +1,22 @@
-<div class="flex flex-row justify-between bg-neutral-900 text-neutral-100 text-2xl p-2 ">
-    <div class="flex flex-col">
-        <img src="/img/smashup-logo.png" alt="logo">
-        <h3>le jeu de société parfait pour se bastonner</h3>
-    </div>
-    <div class="flex flex-row pr-12">
-        <div class="flex flex-col p-4">
-            <h2 class="underline underline-offset-8 text-3xl hover:text-lime-600 cursor-pointer pb-2">about</h2>
-            <h3>règles</h3>
-            <h3>livraisons</h3>
+<div class="bg-neutral-900 text-neutral-100 p-4">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        <div class="flex flex-col items-center md:items-start mb-4 md:mb-0">
+            <img src="/img/smashup-logo.png" alt="logo" class="h-12 mb-2">
+            <h3 class="text-lg">Le jeu de société parfait pour se bastonner</h3>
         </div>
-        <div class="flex flex-col p-4">
-            <h2 class="underline underline-offset-8 text-3xl hover:text-lime-600 cursor-pointer pb-2">info</h2>
-            <h3 class=" hover:text-lime-600 cursor-pointer pb-2">conditions d'utilisations</h3>
-            <h3  class= "cursor-pointer pb-2">politique de confidentialité</h3>
+        <div class="flex flex-col  justify-center md:justify-end md:flex-row">
+            <div class="flex flex-col  space-y-2 md:space-x-8 md:space-y-0">
+                <h2 class="text-2xl underline">About</h2>
+                <h3 class="text-lg cursor-pointer hover:text-lime-600">Règles</h3>
+                <h3 class="text-lg cursor-pointer hover:text-lime-600">Livraisons</h3>
+            </div>
+            <div class="flex flex-col  space-y-2 md:space-x-8 md:space-y-0 mt-4 md:mt-0">
+                <h2 class="text-2xl underline">Info</h2>
+                <h3 class="text-lg cursor-pointer hover:text-lime-600">Conditions d'utilisation</h3>
+                <h3 class="text-lg cursor-pointer  hover:text-lime-600">Politique de confidentialité</h3>
+            </div>
         </div>
     </div>
-
 </div>
+
 <?php /**PATH C:\laragon\www\projet-exam\resources\views/components/footer.blade.php ENDPATH**/ ?>

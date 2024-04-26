@@ -10,59 +10,44 @@
 </head>
 
 <x-header/>
-
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Connexion') }}</div>
+    <div class="container mx-auto py-16">
+        <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-lg">
+            <div class="text-lg bg-lime-600 text-white py-4 px-6 font-semibold">{{ __('Connexion') }}</div>
 
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
+            <div class="px-6 py-4">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
 
-                            <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Adresse E-Mail') }}</label>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700">{{ __('Adresse E-Mail') }}</label>
+                        <input id="email" type="email" class="form-input mt-1 block w-full rounded-md shadow-sm focus:border-lime-600 focus:ring focus:ring-lime-600 focus:ring-opacity-50 @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Mot de passe') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Connexion') }}
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                        @error('email')
+                            <span class="text-sm text-red-500 mt-1">{{ $message }}</span>
+                        @enderror
                     </div>
-                </div>
+
+                    <div class="mb-4">
+                        <label for="password" class="block text-sm font-medium text-gray-700">{{ __('Mot de passe') }}</label>
+                        <input id="password" type="password" class="form-input mt-1 block w-full rounded-md shadow-sm focus:border-lime-600 focus:ring focus:ring-lime-600 focus:ring-opacity-50 @error('password') border-red-500 @enderror" name="password" required autocomplete="current-password">
+
+                        @error('password')
+                            <span class="text-sm text-red-500 mt-1">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <button type="submit" class="bg-lime-600 text-white px-4 py-2 rounded-md hover:bg-lime-700 focus:outline-none focus:bg-lime-700">
+                            {{ __('Connexion') }}
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-<x-footer/>
 </body>
+
+
+<x-footer/>
 </html>
