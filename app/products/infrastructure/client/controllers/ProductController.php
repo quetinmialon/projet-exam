@@ -38,4 +38,9 @@ class ProductController extends Controller
     public function getProductById(Request $request){
         $id = $request->productId;
         return view('/backOffice/products/product', ["product"=> $this->productService->getOneProduct($id)]);
-}}
+    }
+
+    public function getAllProducts(){
+        return view ('/backOffice/products/products',["products"=> $this->productService->getProducts()]);
+    }
+}

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-    <title>Document</title>
-</head>
-<body>
-    <x-header/>
+<x-layout>
     <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
         <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">Liste des Extensions Smash Up</h1>
         
@@ -41,6 +32,4 @@
             </ul>
         </div>
     </div>
-    <x-footer/>
-</body>
-</html>
+</x-layout>

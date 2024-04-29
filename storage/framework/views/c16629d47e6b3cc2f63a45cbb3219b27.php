@@ -5,7 +5,7 @@
     <div class="flex gap-4">
         <a href="/about">
             <button class="bg-transparent text-lime-600 py-2 px-4 rounded-full hover:bg-lime-100 hover:text-lime-700 transition duration-300 ease-in-out">
-                À Propos
+            Extensions
             </button>
         </a>
         <a href="/rules">

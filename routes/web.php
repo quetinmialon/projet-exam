@@ -51,6 +51,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/backOffice/promoCodes-add',[QueryPromoCodeController::class,'getPromoCodesForm']);
     Route::get('/backOffice/promoCodes/{label}',[QueryPromoCodeController::class,'getPromoCodeByLabel']);
     Route::get('backOffice/promoCodes',[QueryPromoCodeController::class,'getAllPromoCodes']);
+    Route::get('/backOffice/products',[ProductController::class,'getAllProducts']);
 });
 
 

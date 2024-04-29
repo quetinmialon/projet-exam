@@ -26,4 +26,9 @@ class EloquentProductsRepository implements ProductRepository {
             $product->snapshot()
         );
     }
+
+    public function delete(WorkingProduct $product):void{
+        Product::destroy($product->id);
+
+    }
 }

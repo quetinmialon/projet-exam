@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-    <title>Document</title>
-</head>
 
-    <x-header/>
+<x-layout>
     <body class="bg-gray-100 p-4">
     <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
         <h1 class="text-3xl font-bold mb-4">Règles du jeu Smash Up</h1>
@@ -79,8 +71,7 @@
         </section>
 
     </div>
-</body>
-    
-    <x-footer/>
 
-</html>
+    
+</x-layout>
+

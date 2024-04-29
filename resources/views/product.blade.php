@@ -1,3 +1,6 @@
+<x-layout>
+
+
 <div class="max-w-md mx-auto bg-white shadow-md overflow-hidden rounded-lg mb-4">
     <img class="w-full h-auto" src="{{$product['img']}}" alt="{{$product['name']}}">
     <div class="px-4 py-2">
@@ -9,3 +12,4 @@
     </div>
     <x-basketButon :productId="$product['id']"/>
 </div>
+</x-layout>

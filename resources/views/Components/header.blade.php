@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
+    <title>Document</title>
+</head>
+<body>
+
 <div class="flex justify-between items-center bg-slate-100 text-3xl p-4">
     <a href="/">
         <div class="flex items-center">

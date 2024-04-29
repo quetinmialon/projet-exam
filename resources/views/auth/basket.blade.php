@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
-    <title>Document</title>
-</head>
-<body>
-    <x-header/>
+<x-layout>
 <div class="container mx-auto mt-8">
     <h1 class="text-3xl font-semibold mb-4">Panier</h1>
     <div id="panier" class="bg-white shadow-md rounded-lg overflow-hidden">
@@ -61,8 +49,6 @@
         </table>
     </div>
 </div>
+</x-layout>
 
-<x-footer/>
-</body>
-</html>
 

@@ -25,4 +25,52 @@ class ProductsService{
         $this->productRepository->save($product);
         return $id;
     }
+
+    public function updateName(String $id, String $name){
+        $product = $this->productRepository->getById($id);
+
+        if(!$product){
+            return;
+        }
+        $product->name = $name;
+        $this->productRepository->save($product);
+    }
+
+    public function updatePrice(String $id, int $price){
+        $product = $this->productRepository->getById($id);
+
+        if(!$product){
+            return;
+        }
+        $product->price = $price;
+        $this->productRepository->save($product);
+    }
+
+    public function updateDescription(String $id, String $description){
+        $product = $this->productRepository->getById($id);
+
+        if(!$product){
+            return;
+        }
+        $product->description = $description;
+        $this->productRepository->save($product);
+    }
+    public function updateImg(String $id, String $img){
+        $product = $this->productRepository->getById($id);
+
+        if(!$product){
+            return;
+        }
+        $product->img = $img;
+        $this->productRepository->save($product);
+    }
+
+    public function deleteProduct(String $id){
+        $product = $this->productRepository->getById($id);
+
+        if(!$product){
+            return;
+        }
+        $this->productRepository->delete($product);
+    }
 }

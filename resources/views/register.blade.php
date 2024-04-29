@@ -1,15 +1,7 @@
 <!-- resources/views/auth/register.blade.php -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    @vite('resources/css/app.css')
-    <title>Inscription</title>
-</head>
-<body>
-    <x-header/>
+
+<x-layout>
     <body>
     <div class="container mx-auto py-16">
         <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-lg">
@@ -60,7 +52,4 @@
             </div>
         </div>
     </div>
-    <x-footer/>
-</body>
-
-</html>
+</x-layout>

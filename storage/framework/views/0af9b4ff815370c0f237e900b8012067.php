@@ -19,4 +19,7 @@
     </div>
 </div>
 
+</body>
+</html>
+
 <?php /**PATH C:\laragon\www\projet-exam\resources\views/components/footer.blade.php ENDPATH**/ ?>
