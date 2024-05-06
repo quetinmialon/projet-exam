@@ -1,35 +1,13 @@
-<!-- resources/views/auth/login.blade.php -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
-    <title>Connexion</title>
-</head>
-
-<?php if (isset($component)) { $__componentOriginal2a2e454b2e62574a80c8110e5f128b60 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal2a2e454b2e62574a80c8110e5f128b60 = $attributes; } ?>
-<?php $component = App\View\Components\Header::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('header'); ?>
+<?php if (isset($component)) { $__componentOriginal23a33f287873b564aaf305a1526eada4 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal23a33f287873b564aaf305a1526eada4 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.layout','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('layout'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\View\Components\Header::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginal2a2e454b2e62574a80c8110e5f128b60)): ?>
-<?php $attributes = $__attributesOriginal2a2e454b2e62574a80c8110e5f128b60; ?>
-<?php unset($__attributesOriginal2a2e454b2e62574a80c8110e5f128b60); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal2a2e454b2e62574a80c8110e5f128b60)): ?>
-<?php $component = $__componentOriginal2a2e454b2e62574a80c8110e5f128b60; ?>
-<?php unset($__componentOriginal2a2e454b2e62574a80c8110e5f128b60); ?>
-<?php endif; ?>
-<body>
     <div class="container mx-auto py-16">
         <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-lg">
             <div class="text-lg bg-lime-600 text-white py-4 px-6 font-semibold"><?php echo e(__('Connexion')); ?></div>
@@ -94,28 +72,14 @@ unset($__errorArgs, $__bag); ?>
             </div>
         </div>
     </div>
-</body>
-
-
-<?php if (isset($component)) { $__componentOriginal8a8716efb3c62a45938aca52e78e0322 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal8a8716efb3c62a45938aca52e78e0322 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.footer','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('footer'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+ <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php $component->withAttributes([]); ?>
-<?php echo $__env->renderComponent(); ?>
+<?php if (isset($__attributesOriginal23a33f287873b564aaf305a1526eada4)): ?>
+<?php $attributes = $__attributesOriginal23a33f287873b564aaf305a1526eada4; ?>
+<?php unset($__attributesOriginal23a33f287873b564aaf305a1526eada4); ?>
 <?php endif; ?>
-<?php if (isset($__attributesOriginal8a8716efb3c62a45938aca52e78e0322)): ?>
-<?php $attributes = $__attributesOriginal8a8716efb3c62a45938aca52e78e0322; ?>
-<?php unset($__attributesOriginal8a8716efb3c62a45938aca52e78e0322); ?>
+<?php if (isset($__componentOriginal23a33f287873b564aaf305a1526eada4)): ?>
+<?php $component = $__componentOriginal23a33f287873b564aaf305a1526eada4; ?>
+<?php unset($__componentOriginal23a33f287873b564aaf305a1526eada4); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginal8a8716efb3c62a45938aca52e78e0322)): ?>
-<?php $component = $__componentOriginal8a8716efb3c62a45938aca52e78e0322; ?>
-<?php unset($__componentOriginal8a8716efb3c62a45938aca52e78e0322); ?>
-<?php endif; ?>
-</html>
 <?php /**PATH C:\laragon\www\projet-exam\resources\views/login.blade.php ENDPATH**/ ?>

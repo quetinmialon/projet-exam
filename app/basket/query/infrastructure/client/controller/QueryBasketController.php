@@ -14,5 +14,10 @@ class QueryBasketController extends Controller {
         return(view('auth.basket',['basket'=>($this->queryBasketServices->getBasket($userId))]));
     }
 
+    public function getBasketPriceForPaymentInformation(){
+        $userId = $this->usersService->getCurrentUserId();
+        return(view('auth.paymentInformation',['price'=>($this->queryBasketServices->getBasket($userId)['total'])]));
+    }
+
     
 }

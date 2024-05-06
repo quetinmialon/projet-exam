@@ -17,6 +17,7 @@ use App\basket\query\work_application\queries\GetPromoCodeByLabel;
 use App\contact\services\SendMailService;
 use App\favorites\infrastructure\gateways\EloquentFavoritesRepository;
 use App\favorites\work_application\gateways\FavoritesRepository;
+use App\orders\command\infrastructure\gateways\EloquentOrdersRepository;
 use App\products\work_application\services\ProductsService;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
@@ -25,6 +26,9 @@ use App\products\infrastructure\gateways\EloquentProductsRepository;
 use App\products\work_application\gateways\ProductRepository;
 use App\basket\query\work_application\queries\GetBasketOfUser;
 use App\basket\query\work_application\services\QueryBasketServices;
+use App\orders\command\work_application\gateways\OrdersRepository;
+use App\orders\command\work_application\services\OrdersServices;
+
 class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
@@ -44,6 +48,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(PromoCodeServices::class, function(Application $app){return new PromoCodeServices($app->get(PromoCodeRepository::class));});
         $this->app->singleton(GetPromoCodeByLabel::class, function(Application $app){return new EloquentGetPromoCodeByLabel();});
         $this->app->singleton(GetAllPromoCodes::class, function(Application $app){return new EloquentGetAllPromoCodes();});
+        $this->app->singleton(OrdersServices::class, function(Application $app){return new OrdersServices($app->get(OrdersRepository::class),$app->get(UUIDProvider::class));});
+        $this->app->singleton(OrdersRepository::class, function(Application $app){return new EloquentOrdersRepository();});
     }
 
 

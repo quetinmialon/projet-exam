@@ -40,10 +40,15 @@
                     <th class="px-6 py-4 text-left">
                         remise : {{$basket['remise']}}
                     </th>
-                    <th class="px-6 py-4 text-left">
-                        prix total : {{$basket['total']}}
-                    </th>
+                    
+                        <th class="px-6 py-4 text-left">
+                            prix total : {{$basket['total']}}
+                        </th>
+                
 
+                        <th>
+                            <a href="/paymentInformation"><button class="bg-lime-600 text-white px-4 py-2 rounded hover:bg-gray-gray-900 hover:cursor-pointer">acheter</button></a>
+                        </th>
                 </tr>
             </tfoot>
         </table>

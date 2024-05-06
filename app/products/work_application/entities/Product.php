@@ -4,7 +4,7 @@
 namespace App\products\work_application\entities;
 
 class Product{
-    public function __construct(public string $id, private int $price, private string $name, private string $description, private string $img)
+    public function __construct(public string $id, public int $price, public string $name, public string $description, public string $img)
     {
 
     }

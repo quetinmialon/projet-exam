@@ -12,7 +12,8 @@
     <section>
         <a href="/backOffice/products"><div>gestion des produits</div></a>
         <a href="/backOffice/promoCode"><div>gestion des codes promo</div></a>
-        <a href="/backOffice/users"><div>gestion utilisateurs</div></a>       
+        <a href="/backOffice/users"><div>gestion utilisateurs</div></a>    
+        <a href="/backOffice/orders"><div>gestion des commandes</div></a>   
     </section>
     <x-footer/>
 </body>

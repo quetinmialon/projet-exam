@@ -9,6 +9,7 @@ use App\contact\controllers\ContactFormController;
 use App\favorites\infrastructure\client\controllers\FavoriteController;
 use App\products\infrastructure\client\controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\orders\command\infrastructure\client\controller\OrderController;
 
 Route::get('/', [ProductController::class,'index']);
 Route::get('/about',function(){return view("about");});
@@ -41,6 +42,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/basket-promoCode/remove',[BasketController::class,'removePromoCodeInBasket']);
     Route::get('/basket/loadingView',function (){return view('components.basket');});
     Route::get('/basket',[QueryBasketController::class,'getTheBasketOfCurrentUser']);
+    Route::get('/paymentInformation',[QueryBasketController::class,'getBasketPriceForPaymentInformation']);
+    Route::post('/orderCreate',[OrderController::class,'changeBasketIntoOrder']);
 
     //Route admin 
 

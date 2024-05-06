@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
+    <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
+    <title>Document</title>
+</head>
+<body>
+
 <div class="flex justify-between items-center bg-slate-100 text-3xl p-4">
     <a href="/">
         <img src="/img/smashup-logo.png" alt="logo" class="h-16 w-auto">

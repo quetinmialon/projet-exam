@@ -3,7 +3,7 @@
 namespace App\basket\command\work_application\entities;
 
 class Basket{
-    public function __construct(private int $userId, private array $products, private ?String $promoCodeLabel){}
+    public function __construct(private int $userId, public array $products, private ?String $promoCodeLabel){}
 
     public function addProduct(string $productId, int $quantity = 1):void{
 

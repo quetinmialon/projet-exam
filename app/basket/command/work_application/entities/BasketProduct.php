@@ -3,7 +3,7 @@
 namespace App\basket\command\work_application\entities;
 
 class BasketProduct{
-    public function __construct(private int $userId, public string $productId,private int $quantity){}
+    public function __construct(private int $userId, public string $productId,public int $quantity){}
 
     public function snapshot():mixed{
         return [
