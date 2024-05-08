@@ -6,18 +6,17 @@ use App\orders\command\infrastructure\gateways\model\Order;
 use App\orders\command\infrastructure\gateways\model\ProductCommand;
 use App\orders\command\work_application\entities\Order as WorkApplicationOrder;
 use App\orders\command\work_application\gateways\OrdersRepository;
-use Faker\Core\Uuid;
+
 
 class EloquentOrdersRepository implements OrdersRepository{
 
-    public function getByUser(int $userId): array{
-        return [];
-    }
+
     public function save(WorkApplicationOrder $order):void{
         $snapshot = $order->snapshot();
         
 
         $orderId = $snapshot['orderId'];
+
 
 
         $products = array_map(function ($product)use ($orderId){
@@ -47,17 +46,7 @@ class EloquentOrdersRepository implements OrdersRepository{
         ProductCommand::where('orderId','=',$snapshot['orderId'])->delete();
         Order::where('orderId','=',$snapshot['orderId'])->delete();
     }
-    public function getById(int $orderId):?WorkApplicationOrder{
-        return null;
-    }
 
-    public function getByStatus(string $status):?array{
-        return null;
-    }
-
-    public function getAllOrders():?array{
-        return null;
-    }
 
 }
 

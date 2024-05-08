@@ -12,4 +12,9 @@ class PromoCodeModel extends Model{
         'type'
     ];
 
+    protected $primaryKey = 'label';
+    protected $keyType = 'string';
+    public $incrementing = false;
+
+
 }

@@ -1,8 +1,18 @@
-<x-layout>
+<?php if (isset($component)) { $__componentOriginal23a33f287873b564aaf305a1526eada4 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal23a33f287873b564aaf305a1526eada4 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.layout','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('layout'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
     <div class="bg-white overflow-hidden shadow rounded-lg border">
         <div class="px-4 py-5 sm:px-6">
             <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Profil Utilisateur - {{$user['name']}}
+                Profil Utilisateur - <?php echo e($user['name']); ?>
+
             </h3>
         </div>
         <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
@@ -12,7 +22,8 @@
                         Nom
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        {{$user['name']}}
+                        <?php echo e($user['name']); ?>
+
                     </dd>
                 </div>
                 <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -20,7 +31,8 @@
                         Email
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        {{$user['email']}}
+                        <?php echo e($user['email']); ?>
+
                     </dd>
                 </div>
                 <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -28,7 +40,8 @@
                         Adresse
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        {{$user['adress']}}
+                        <?php echo e($user['adress']); ?>
+
                     </dd>
                 </div>
             </dl>
@@ -36,7 +49,8 @@
         <div class="bg-white overflow-hidden shadow rounded-lg border">
             <div class="px-4 py-5 sm:px-6">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
-                    Commandes de {{$user['name']}}
+                    Commandes de <?php echo e($user['name']); ?>
+
                 </h3>
             </div>
             <div class="border-t border-gray-200">
@@ -64,36 +78,38 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        @foreach($orders as $order)
+                        <?php $__currentLoopData = $orders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $order): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{$order['paymentMethod']}}</div>
+                                    <div class="text-sm text-gray-900"><?php echo e($order['paymentMethod']); ?></div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{$order['adress']}}</div>
+                                    <div class="text-sm text-gray-900"><?php echo e($order['adress']); ?></div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{$order['totalPrice']}}€</div>
+                                    <div class="text-sm text-gray-900"><?php echo e($order['totalPrice']); ?>€</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full {{$order['status'] !== 'waiting' ? 'bg-green-300 text-green-800' : 'bg-yellow-300 text-yellow-800'}}">
-                                        {{$order['status']}}
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <?php echo e($order['status'] !== 'waiting' ? 'bg-green-300 text-green-800' : 'bg-yellow-300 text-yellow-800'); ?>">
+                                        <?php echo e($order['status']); ?>
+
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <span class="px-2 inline-flex text-xs leading-5 font-semibold ">
-                                        {{$order['id']}}
+                                        <?php echo e($order['id']); ?>
+
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <button class="toggle-details-btn text-indigo-600 hover:text-indigo-900 focus:outline-none" data-order-id="{{ $order['id'] }}">
+                                    <button class="toggle-details-btn text-indigo-600 hover:text-indigo-900 focus:outline-none" data-order-id="<?php echo e($order['id']); ?>">
                                         Voir le détail de la commande
                                     </button>
                                 </td>
                             </tr>
-                            <tr class="order-details hidden" id="orderDetails_{{ $order['id'] }}" style="display:none">
+                            <tr class="order-details hidden" id="orderDetails_<?php echo e($order['id']); ?>" style="display:none">
                                 <td colspan="5" class="px-6 py-4">
-                                    <h4 class="text-lg leading-6 font-medium text-gray-900 mb-4">Détails de la commande numéro : {{$order['id']}}</h4>
+                                    <h4 class="text-lg leading-6 font-medium text-gray-900 mb-4">Détails de la commande numéro : <?php echo e($order['id']); ?></h4>
                                     <table class="min-w-full divide-y divide-gray-200">
                                         <thead class="bg-gray-50">
                                             <tr>
@@ -103,22 +119,32 @@
                                             </tr>
                                         </thead>
                                         <tbody class="bg-white divide-y divide-gray-200">
-                                            @foreach($order['productCommands'] as $product)
+                                            <?php $__currentLoopData = $order['productCommands']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <tr>
-                                                    <td class="px-6 py-3 whitespace-nowrap">{{$product['name']}}</td>
-                                                    <td class="px-6 py-3 whitespace-nowrap">{{$product['quantity']}}</td>
-                                                    <td class="px-6 py-3 whitespace-nowrap">{{$product['price']}}</td>
+                                                    <td class="px-6 py-3 whitespace-nowrap"><?php echo e($product['name']); ?></td>
+                                                    <td class="px-6 py-3 whitespace-nowrap"><?php echo e($product['quantity']); ?></td>
+                                                    <td class="px-6 py-3 whitespace-nowrap"><?php echo e($product['price']); ?></td>
                                                 </tr>
-                                            @endforeach
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </tbody>
                                     </table>
                                 </td>
                             </tr>
-                        @endforeach
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-</x-layout>
+ <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal23a33f287873b564aaf305a1526eada4)): ?>
+<?php $attributes = $__attributesOriginal23a33f287873b564aaf305a1526eada4; ?>
+<?php unset($__attributesOriginal23a33f287873b564aaf305a1526eada4); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal23a33f287873b564aaf305a1526eada4)): ?>
+<?php $component = $__componentOriginal23a33f287873b564aaf305a1526eada4; ?>
+<?php unset($__componentOriginal23a33f287873b564aaf305a1526eada4); ?>
+<?php endif; ?>
 
+<?php /**PATH C:\laragon\www\projet-exam\resources\views/auth/userProfile.blade.php ENDPATH**/ ?>

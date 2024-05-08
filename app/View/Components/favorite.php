@@ -13,7 +13,7 @@ class favorite extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(private FavoriteService $favoriteService, private Usersservice $authservice,public $productId)
+    public function __construct(private FavoriteService $favoriteService, private UsersService $authservice,public $productId)
     {
         //
     }
@@ -27,10 +27,14 @@ class favorite extends Component
      */
     public function render(): View|Closure|string
     {
-        $userId = $this->authservice->getCurrentUserId();
-        if (!$userId){
+        $userIsLogged = $this->authservice->checkAuth();
+
+
+        if (!$userIsLogged){
             return view('components.favorite-Logout');
         }
+
+        $userId = $this->authservice->getCurrentUserId();
 
         return view('components.favorite', [
             'isFavorite' =>  $this->favoriteService->isProductInFavorites($userId,strval($this->productId))

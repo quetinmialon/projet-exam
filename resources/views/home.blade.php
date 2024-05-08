@@ -1,6 +1,6 @@
 
 <x-layout>
-    <section class ="flex flex-row">
+    <section class ="flex flex-row flex-wrap">
     @foreach($products as $product)
        
         <div class="max-w-96 mx-auto bg-white shadow-md rounded-lg mb-4"> 

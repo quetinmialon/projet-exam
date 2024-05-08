@@ -3,7 +3,7 @@ window.toggleFavorite = function(productId) {
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     
 
-    const isFavorite = document.querySelector(`#favorite-button-${productId}`).classList.contains('bg-green-500');
+    const isFavorite = document.querySelector(`#favorite-button-${productId}`).classList.contains('bg-lime-600');
 
 
     if (isFavorite) {
@@ -17,7 +17,7 @@ window.toggleFavorite = function(productId) {
             
         }).then(() => {
 
-            document.querySelector(`#favorite-button-${productId}`).classList.remove('bg-green-500', 'text-white');
+            document.querySelector(`#favorite-button-${productId}`).classList.remove('bg-lime-600', 'text-white');
             document.querySelector(`#favorite-button-${productId}`).classList.add('bg-white', 'text-black');
         });
     } else {
@@ -32,7 +32,7 @@ window.toggleFavorite = function(productId) {
         }).then(() => {
 
             document.querySelector(`#favorite-button-${productId}`).classList.remove('bg-white', 'text-black');
-            document.querySelector(`#favorite-button-${productId}`).classList.add('bg-green-500', 'text-white');
+            document.querySelector(`#favorite-button-${productId}`).classList.add('bg-lime-600', 'text-white');
         });
     }
 }

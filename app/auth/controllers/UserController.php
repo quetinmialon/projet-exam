@@ -3,17 +3,16 @@
 namespace App\auth\controllers;
 
 use App\auth\services\UsersService;
+use App\orders\query\work_application\services\QueryOrdersServices;
+use App\products\work_application\services\ProductsService;
 use App\shared\Controller;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    protected $userService;
 
-    public function __construct(UsersService $userService)
-    {
-        $this->userService = $userService;
-    }
+
+    public function __construct(private UsersService $userService, private QueryOrdersServices $queryOrdersServices, private ProductsService $productsService){}
 
     public function login(Request $request)
     {
@@ -63,5 +62,34 @@ class UserController extends Controller
 
     public function showLoginForm (){
         return view ('login');
+    }
+
+    public function profile(){
+            $userId = $this->userService->getCurrentUserId();
+            $user = $this->userService->getUserInfo($userId);
+            $orders = $this->queryOrdersServices->getOrdersOfCurrentUser($userId);
+
+            foreach ($orders as &$order) {
+                $productsInOrder = $this->queryOrdersServices->getProductsInOrder($order['id']);
+                foreach ($productsInOrder as &$productInOrder) {
+                    $product = $this->productsService->getOneProduct($productInOrder['productId']);
+                    $productInOrder['name'] = $product['name'];
+                    $productInOrder['price'] = $product['price'];
+                }
+                unset($productInOrder);
+                $order['productCommands'] = $productsInOrder;
+            }
+            unset($order); // Dissocier la référence après la boucle foreach
+            
+
+        
+            return view('auth.userProfile', [
+                'user' => $user,
+                'orders' => $orders
+            ]);
+    }
+
+    public function usersList(){
+        return view('backOffice.users.usersList',['users'=>$this->userService->getUsers()]);
     }
 }

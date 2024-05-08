@@ -8,12 +8,21 @@ class Order extends Model{
     protected $table = 'orders';
 
     protected $fillable = [
-        'id',
         'userId',
         'adress',
         'paymentMethod',
         'status',
         'totalPrice',
     ];
+
+    protected $primaryKey = 'id';
+    protected $keyType = 'string';
+    public $incrementing = false;
+
+    public function productCommands()
+    {
+        return $this->hasMany(ProductCommand::class);
+    }
+
     
 }

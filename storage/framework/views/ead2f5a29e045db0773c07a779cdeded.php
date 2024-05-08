@@ -9,7 +9,7 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
-    <section class ="flex flex-row">
+    <section class ="flex flex-row flex-wrap">
     <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
        
         <div class="max-w-96 mx-auto bg-white shadow-md rounded-lg mb-4"> 

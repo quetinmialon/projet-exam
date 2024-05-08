@@ -42,4 +42,12 @@ class UsersService
         }
         return $User->getAuthIdentifier();
     }
+
+    public function getUserInfo($id){
+        return User::find($id)->toArray();
+    }
+
+    public function getUsers(){
+        return User::all()->toArray();
+    }
 }
