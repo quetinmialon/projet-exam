@@ -73,4 +73,8 @@ class ProductsService{
         }
         $this->productRepository->delete($product);
     }
+
+    public function getTotalProducts(){
+        return ProductModel::all()->count();
+    }
 }

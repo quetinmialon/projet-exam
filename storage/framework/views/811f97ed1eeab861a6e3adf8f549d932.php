@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
+    <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
+    <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
     <title>Document</title>
 </head>
 <header class="bg-gray-800 text-white p-4 flex justify-between items-center">
@@ -17,5 +17,6 @@
 </header>
 
 <body>
-    {{$slot}}
-</body>
+    <?php echo e($slot); ?>
+
+</body><?php /**PATH C:\laragon\www\projet-exam\resources\views/components/layout-admin.blade.php ENDPATH**/ ?>

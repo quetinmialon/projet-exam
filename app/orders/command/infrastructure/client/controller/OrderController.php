@@ -19,5 +19,6 @@ class OrderController extends Controller {
         $basket = $this->basketServices->getBasketOfCurrentUser($userId);
         $this->ordersService->putBasketProductIntoOrderTable($basket->products,$request->adress,$request->paymentMethod,$request->status,$request->price,$userId);        
         $this->basketServices->clear($userId);
+        return redirect()->route('profile');
     }
 }

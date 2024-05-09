@@ -5,6 +5,7 @@ namespace App\auth\services;
 
 use App\auth\models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UsersService
 {
@@ -17,7 +18,6 @@ class UsersService
 
     public function register($data) : User
     {
-
         return User::create($data);
     }
 
@@ -50,4 +50,29 @@ class UsersService
     public function getUsers(){
         return User::all()->toArray();
     }
+
+    public function updatePassword(string $password,int $userId){
+
+        $user = User::find($userId);
+        $user->password = Hash::make($password);
+        $user->save();
+    }
+
+    public function updateAdress(string $adress, int $userId){
+        $user = User::find($userId);
+        $user->adress = $adress;
+        $user->save();
+    }
+    public function updateName(string $name, int $userId){
+        $user = User::find($userId);
+        $user->name = $name;
+        $user->save();
+    }
+
+    public function getTotalUsers(){
+        return User::all()->count();
+    }
+
+
+
 }

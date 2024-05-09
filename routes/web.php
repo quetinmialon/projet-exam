@@ -1,5 +1,6 @@
 <?php
 
+use App\auth\controllers\AdminController;
 use App\auth\controllers\UserController;
 use App\basket\command\infrastructure\client\controller\BasketController;
 use App\basket\command\infrastructure\client\controller\PromoCodeController;
@@ -44,7 +45,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/basket',[QueryBasketController::class,'getTheBasketOfCurrentUser']);
     Route::get('/paymentInformation',[QueryBasketController::class,'getBasketPriceForPaymentInformation']);
     Route::post('/orderCreate',[OrderController::class,'changeBasketIntoOrder']);
-    Route::get('/userProfile',[UserController::class,'profile']);
+    Route::get('/userProfile',[UserController::class,'profile'])->name('profile');
+    Route::get('/userProfile/update',[UserController::class,'updateProfile']);
+    Route::post('/userProfile/updateName',[UserController::class,'updateName'])->name('updateName');
+    Route::post('/userProfile/updateAdress',[UserController::class,'updateAdress'])->name('updateAdress');
+    Route::post('/userProfile/updatePassword',[UserController::class,'updatePassword'])->name('updatePassword');
 
     //Route admin 
 
@@ -56,8 +61,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/backOffice/promoCodes/{label}',[QueryPromoCodeController::class,'getPromoCodeByLabel']);
     Route::get('backOffice/promoCodes',[QueryPromoCodeController::class,'getAllPromoCodes']);
     Route::get('/backOffice/products',[ProductController::class,'getAllProducts']);
-    Route::get('/backOffice/users',[UserController::class,'usersList']);
-    Route::get('/backOffice/user/{id}',[UserController::class,'profile']);
+    Route::get('/backOffice/users',[AdminController::class,'usersList']);
+    Route::get('/backOffice/user/{id}',[AdminController::class,'adminProfile']);
+    Route::get('/backOffice',[AdminController::class,'backOffice']);
 });
 
 

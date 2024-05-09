@@ -1,5 +1,5 @@
 
-<x-layout>
+<x-layout-admin>
 
 <div class="text-gray-900 bg-gray-200">
     <div class="p-4 flex">
@@ -41,4 +41,4 @@
 
     </div>
 </div>
-</x-layout>
+</x-layout-admin>

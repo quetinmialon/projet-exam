@@ -30,4 +30,17 @@ class QueryOrdersServices{
         return $this->queriesOrders->getProductsInOrder($orderId);
     }
 
+    public function getTotalPriceOfAllOrders(){
+        $orders = $this->getAllOrders();
+        $totalPrice = 0;
+        foreach($orders as $order){
+            $totalPrice += $order['totalPrice'];
+        }
+        return $totalPrice;
+    }
+
+    public function getTotalOrders(){
+        return count($this->getAllOrders());
+    }
+
 }

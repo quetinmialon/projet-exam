@@ -8,6 +8,7 @@ class Order extends Model{
     protected $table = 'orders';
 
     protected $fillable = [
+        'id',
         'userId',
         'adress',
         'paymentMethod',

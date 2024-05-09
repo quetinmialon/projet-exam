@@ -1,6 +1,7 @@
 <?php
 namespace App\basket\query\work_application\services;
 use App\auth\services\UsersService;
+use App\basket\command\infrastructure\models\PromoCodeModel;
 use App\basket\command\work_application\entities\PromoCode;
 use App\basket\query\work_application\queries\GetBasketOfUser;
 
@@ -47,6 +48,10 @@ class QueryBasketServices{
             $total += $product['price']*$product['quantity'];
         }
         return $total;
+    }
+
+    public function getTotalPromoCodes(){
+        return PromoCodeModel::all()->count();
     }
 
 

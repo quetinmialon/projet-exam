@@ -42,20 +42,7 @@ class UserController extends Controller
 
         return redirect('/login')->with('success', 'Votre compte a été créé avec succès. Veuillez vous connecter.');
     }
-    public function createAdmin(Request $request)
-    {
-        $data = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',
-        ]);
 
-        $data['admin'] = true;
-
-        $this->userService->createAdmin($data);
-
-        return redirect('/dashboard')->with('success', 'Nouvel administrateur créé avec succès.');
-    }
     public function showRegisterForm (){
         return view('register');
     }
@@ -89,7 +76,35 @@ class UserController extends Controller
             ]);
     }
 
-    public function usersList(){
-        return view('backOffice.users.usersList',['users'=>$this->userService->getUsers()]);
+
+
+    public function updateName(Request $request){
+        $userId = $this->userService->getCurrentUserId();
+        $this->userService->updateName( $request->name,$userId);
+        return redirect('/userProfile');
     }
+
+    public function updatePassword(Request $request){
+        $userId = $this->userService->getCurrentUserId();
+
+        if(strlen($request->password)<8){
+            return back()->withInput()->withErrors(['password' => 'Le mot de passe doit contenir au moins 8 caractères.']);
+        }
+        $this->userService->updatePassword( $request->password,$userId);
+        return redirect('/userProfile');
+    }
+
+    public function updateAdress(Request $request){
+        $userId = $this->userService->getCurrentUserId();
+        $this->userService->updateAdress($request->adress,$userId);
+        return redirect('/userProfile');
+    }
+
+    public function updateProfile(){
+        return view('auth.userProfileUpdate',[
+            'user' => $this->userService->getUserInfo($this->userService->getCurrentUserId())
+        ]);
+    }
+
+
 }

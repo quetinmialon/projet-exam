@@ -9,10 +9,12 @@
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
     <div class="bg-white overflow-hidden shadow rounded-lg border">
-        <div class="px-4 py-5 sm:px-6">
+        <div class="px-4 py-5 sm:px-6 flex flex-row">
             <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Profil Utilisateur - <?php echo e($user['name']); ?>
-
+                Profil Utilisateur - <?php echo e($user['name']); ?>  - 
+<?php if($user['admin'] == 1): ?>
+    <a href="/backOffice"><button class="mt-2 bg-lime-600 text-white px-4 py-2 rounded-md hover:bg-lime-700 focus:outline-none focus:bg-lime-700">BackOffice</button></a>
+<?php endif; ?>
             </h3>
         </div>
         <div class="border-t border-gray-200 px-4 py-5 sm:p-0">

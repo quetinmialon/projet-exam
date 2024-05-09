@@ -26,5 +26,4 @@ class EloquentQueriesOrders implements QueriesOrders{
     public function getProductsInOrder(string $orderId):array{
         return  ProductCommand::where('orderId','=',$orderId)->get()->toArray();
     }
-
 }
