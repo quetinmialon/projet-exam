@@ -27,8 +27,10 @@ class ProductController extends Controller
     public function addProduct(Request $request){
         $name = $request->input('name');
         $price = $request->input('price');
-        $productId = $this->productService->addProduct($name, $price);
-        return redirect('/backOffice/products/'.$productId);
+        $description = $request->input('description');
+        $img = $request->input('img');
+        $this->productService->addProduct($name, $price, $description, $img);
+        return redirect('/backOffice/products');
     }
 
     public function getProductForm(){
@@ -42,5 +44,19 @@ class ProductController extends Controller
 
     public function getAllProducts(){
         return view ('/backOffice/products/products',["products"=> $this->productService->getProducts()]);
+    }
+
+    public function getUpdateProductForm(Request $request){
+        return view('/backOffice/products/updateProduct',['product'=> $this->productService->getOneProduct($request->Id)]);
+    }
+
+    public function updateProduct(Request $request){
+        $this->productService->updateProduct($request->id,$request->name,$request->price,$request->description,$request->img);
+        return redirect('/backOffice/products');
+    }
+
+    public function deleteProduct(Request $request){
+        $this->productService->deleteProduct($request->id);
+        return redirect('/backOffice/products');
     }
 }

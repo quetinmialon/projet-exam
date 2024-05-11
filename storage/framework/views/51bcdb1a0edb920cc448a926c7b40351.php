@@ -39,9 +39,9 @@
                     <div class="bg-transparent border-b-2 border-gray-300 py-2"><?php echo e($user['adress']); ?></div>
                     </td>       
                     <td class="p-3 px-5 flex justify-end">
-                        <button class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">orders</button>
-                        <button  class=" mr-3 text-sm bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit</button>
-                        <button  class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
+                        <a href="/backOffice/ordersUser/<?php echo e($user['id']); ?>"><button class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">orders</button></a>
+                        <a href="/backOffice/user/<?php echo e($user['id']); ?>"><button  class=" mr-3 text-sm bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit</button></</a>
+                        <a href="/backOffice/userDelete/<?php echo e($user['id']); ?>"><button  class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></a>
                     </td>
                 </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

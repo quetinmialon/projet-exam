@@ -19,50 +19,61 @@ class ProductsService{
         return ProductModel::where('name','like','%'.$name.'%')->get();
     }
 
-    public function addProduct(String $name, int $price){
+    public function addProduct(String $name, int $price, string|null $description,string|null $img){
         $id = $this->UUIDProvider->getUUID();
-        $product = Product::new($id,$name,$price);
+        $product = Product::new($id,$name,$price,$description,$img);
         $this->productRepository->save($product);
         return $id;
     }
 
-    public function updateName(String $id, String $name){
+    private function updateName(String $id, String $name){
         $product = $this->productRepository->getById($id);
 
-        if(!$product){
+        if(!$name){
             return;
         }
         $product->name = $name;
         $this->productRepository->save($product);
     }
 
-    public function updatePrice(String $id, int $price){
+    private function updatePrice(String $id, int $price){
         $product = $this->productRepository->getById($id);
 
-        if(!$product){
+        if(!$price){
             return;
         }
         $product->price = $price;
         $this->productRepository->save($product);
     }
 
-    public function updateDescription(String $id, String $description){
+    private function updateDescription(String $id, String|null $description){
         $product = $this->productRepository->getById($id);
 
-        if(!$product){
+        if(!$description){
             return;
         }
         $product->description = $description;
         $this->productRepository->save($product);
     }
-    public function updateImg(String $id, String $img){
+    private function updateImg(String $id, String|null $img){
         $product = $this->productRepository->getById($id);
 
-        if(!$product){
+        if(!$img){
             return;
         }
         $product->img = $img;
         $this->productRepository->save($product);
+    }
+
+    public function updateProduct(String $id, String $name, int $price, String|null $description, String|null $img){
+        $product = $this->productRepository->getById($id);
+        if(!$product){
+            return;
+        }
+        $this->updateName($id,$name);
+        $this->updatePrice($id,$price);
+        $this->updateDescription($id,$description);
+        $this->updateImg($id,$img);
     }
 
     public function deleteProduct(String $id){

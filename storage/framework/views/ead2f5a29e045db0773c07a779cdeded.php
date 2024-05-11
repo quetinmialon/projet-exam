@@ -9,13 +9,13 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
-    <section class ="flex flex-row flex-wrap">
+    <section class ="flex flex-row flex-wrap items-start">
     <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
        
         <div class="max-w-96 mx-auto bg-white shadow-md rounded-lg mb-4"> 
            
             
-            <img class="w-full h-auto" src="<?php echo e($product['img']); ?>" alt="<?php echo e($product['name']); ?>">
+            <img class="w-full h-auto" src="<?php echo e($product['img'] ? $product['img'] : '/img/paysage.png'); ?>" alt="<?php echo e($product['name']); ?>">
             <div class="px-4 py-2">
                 <div class="font-bold text-xl mb-2"><?php echo e($product['name']); ?> </div>
                 <?php if (isset($component)) { $__componentOriginal62d08f292a525f69219833e02dcd746d = $component; } ?>
@@ -38,7 +38,7 @@
 <?php $component = $__componentOriginal62d08f292a525f69219833e02dcd746d; ?>
 <?php unset($__componentOriginal62d08f292a525f69219833e02dcd746d); ?>
 <?php endif; ?>
-                <p class="text-gray-700 text-base"><?php echo e($product['description']); ?></p>
+                <p class="text-gray-700 text-base"><?php echo e($product['description'] ? $product['description'] :'les détails de ce produits ne sont pas encore dévoilés mais soyez patients !'); ?></p>
             </div>
             <div class="px-4 py-2">
                 <span class="text-gray-900 font-bold"><?php echo e($product['price']); ?> €</span>

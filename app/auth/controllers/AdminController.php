@@ -42,4 +42,24 @@ class AdminController extends Controller
 
         return redirect('/backOffice')->with('success', 'Nouvel administrateur créé avec succès.');
     }
+
+    public function adminProfile(Request $request){
+        return view('backOffice.users.updateProfile',['user'=>$this->userService->getUserInfo($request->id)]);
+    }
+
+    public function updateProfile(Request $request){
+        
+        $updatingInfo = [
+            'name'=>$request->name,
+            'admin'=>$request->admin,
+            'adress'=>$request->adress,
+        ];
+        $this->userService->updateProfile($request->id,$updatingInfo);
+        return redirect('/backOffice/users');
+    }
+
+    public function deleteUser(Request $request){
+        $this->userService->deleteUser($request->id);
+        return redirect('/backOffice/users');
+    }
 }

@@ -2,10 +2,10 @@
     <div class="bg-white overflow-hidden shadow rounded-lg border">
         <div class="px-4 py-5 sm:px-6 flex flex-row">
             <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Profil Utilisateur - {{$user['name']}}  - 
-@if($user['admin'] == 1)
-    <a href="/backOffice"><button class="mt-2 bg-lime-600 text-white px-4 py-2 rounded-md hover:bg-lime-700 focus:outline-none focus:bg-lime-700">BackOffice</button></a>
-@endif
+                Profil Utilisateur - {{$user['name']}}  - <a href="/userProfile/update"><button class="mt-2 bg-lime-600 text-white px-4 py-2 rounded-md hover:bg-lime-700 focus:outline-none focus:bg-lime-700">modifier le profil</button></a>
+                @if($user['admin'] == 1)
+                    <a href="/backOffice"><button class="mt-2 bg-lime-600 text-white px-4 py-2 rounded-md hover:bg-lime-700 focus:outline-none focus:bg-lime-700">BackOffice</button></a>
+                @endif
             </h3>
         </div>
         <div class="border-t border-gray-200 px-4 py-5 sm:p-0">

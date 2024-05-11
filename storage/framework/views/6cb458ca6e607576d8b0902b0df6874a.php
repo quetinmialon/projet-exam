@@ -11,10 +11,10 @@
 
 
 <div class="max-w-md mx-auto bg-white shadow-md overflow-hidden rounded-lg mb-4">
-    <img class="w-full h-auto" src="<?php echo e($product['img']); ?>" alt="<?php echo e($product['name']); ?>">
+    <img class="w-full h-auto" src="<?php echo e($product['img'] ? $product['img'] : '/img/paysage.png'); ?>" alt="<?php echo e($product['name']); ?>">
     <div class="px-4 py-2">
         <div class="font-bold text-xl mb-2"><?php echo e($product['name']); ?></div>
-        <p class="text-gray-700 text-base"><?php echo e($product['description']); ?></p>
+        <p class="text-gray-700 text-base"><?php echo e($product['description'] ? $product['description'] :'les détails de ce produits ne sont pas encore dévoilés mais soyez patients !'); ?></p>
     </div>
     <div class="px-4 py-2">
         <span class="text-gray-900 font-bold"><?php echo e($product['price']); ?> €</span>

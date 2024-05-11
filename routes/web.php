@@ -52,18 +52,26 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/userProfile/updatePassword',[UserController::class,'updatePassword'])->name('updatePassword');
 
     //Route admin 
+    Route::get('/backOffice',[AdminController::class,'backOffice']);
 
+    Route::get('/backOffice/products',[ProductController::class,'getAllProducts']);
     Route::post('/backOffice/addProduct',[ProductController::class,'addProduct']);
     Route::get('/backOffice/addProductForm',[ProductController::class,'getProductForm']);
     Route::get('/backOffice/products/{productId}',[ProductController::class,'getProductById']);
+    Route::get('/backOffice/product/edit/{Id}',[ProductController::class,'getUpdateProductForm']);
+    Route::post('/backOffice/updateProduct/{id}',[ProductController::class,'updateProduct']);
+    Route::get('backOffice/products/delete/{id}',[ProductController::class,'deleteProduct']);
+
     Route::post('/backOffice/promoCodes',[PromoCodeController::class,'addPromoCode']);
     Route::get('/backOffice/promoCodes-add',[QueryPromoCodeController::class,'getPromoCodesForm']);
     Route::get('/backOffice/promoCodes/{label}',[QueryPromoCodeController::class,'getPromoCodeByLabel']);
     Route::get('backOffice/promoCodes',[QueryPromoCodeController::class,'getAllPromoCodes']);
-    Route::get('/backOffice/products',[ProductController::class,'getAllProducts']);
+    
     Route::get('/backOffice/users',[AdminController::class,'usersList']);
-    Route::get('/backOffice/user/{id}',[AdminController::class,'adminProfile']);
-    Route::get('/backOffice',[AdminController::class,'backOffice']);
+    Route::get('/backOffice/user/{id}',[AdminController::class,'adminProfile']);  
+    Route::post('/backOffice/updateUser/{id}',[AdminController::class,'updateProfile']);
+    Route::get('/backOffice/userDelete/{id}',[AdminController::class,'deleteUser']);
+
 });
 
 

@@ -8,6 +8,7 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
+<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 <div class="container mx-auto mt-8">
     <h1 class="text-3xl font-semibold mb-4">Panier</h1>
     <div id="panier" class="bg-white shadow-md rounded-lg overflow-hidden">

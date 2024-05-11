@@ -73,6 +73,19 @@ class UsersService
         return User::all()->count();
     }
 
+    public function updateProfile(int $userId, array $profile){
+        $user = User::find($userId);
+        $user->name = $profile['name'];
+        $user->adress = $profile['adress'];
+        $user->admin = intval($profile['admin']);
+        $user->save();
+    }
+
+    public function deleteUser(int $userId){
+        $user = User::find($userId);
+        $user->delete();
+    }
+
 
 
 }

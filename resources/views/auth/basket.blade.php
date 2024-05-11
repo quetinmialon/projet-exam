@@ -1,4 +1,5 @@
 <x-layout>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <div class="container mx-auto mt-8">
     <h1 class="text-3xl font-semibold mb-4">Panier</h1>
     <div id="panier" class="bg-white shadow-md rounded-lg overflow-hidden">
