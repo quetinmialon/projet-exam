@@ -8,4 +8,6 @@ interface PromoCodeRepository{
 
     public function save(PromoCode $promoCode):void;    
 
+    public function delete(PromoCode $promoCode):void;
+
 }

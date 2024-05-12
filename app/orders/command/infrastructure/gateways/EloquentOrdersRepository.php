@@ -47,6 +47,18 @@ class EloquentOrdersRepository implements OrdersRepository{
         Order::where('orderId','=',$snapshot['orderId'])->delete();
     }
 
+    public function getById(string $id): WorkApplicationOrder{
+        $order = Order::where('id','=',$id)->first();
+        $products = ProductCommand::where('orderId','=',$id)->get()->toArray();
+        return new WorkApplicationOrder($order->id,$order->userId,$order->adress,$order->paymentMethod,$order->status,$order->totalPrice,$products);
+    }
+
+    public function changeStatus(string $id, string $status):void{
+        $order = Order::where('id','=',$id)->first();
+        $order->status = $status;
+        $order->save();
+    }
+
 
 }
 

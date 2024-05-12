@@ -2,7 +2,7 @@
     <div class="text-gray-900 bg-gray-200">
         <div class="p-4 flex">
             <h1 class="text-3xl">Products - </h1> 
-            <a href="/backOffice/addProductForm"><button type="submit" class="mx-2 inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:bg-blue-700">Ajouter un Produit</button></a>
+            <a href="/backOffice/addProductForm"><button class="mx-2 inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:bg-blue-700">Ajouter un Produit</button></a>
 
         </div>
         <div class="px-3 py-4 flex justify-center">

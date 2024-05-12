@@ -11,6 +11,11 @@ class PromoCodeController extends Controller {
 
     public function addPromoCode(Request $request){
         $this->promoCodeServices->create( $request->input('label'), $request->input('type'), $request->input('value'));
-        return redirect('backOffice/promoCodes/'.$request->input("label"));
+        return redirect('backOffice/promoCode');
+    }
+
+    public function deletePromoCode(Request $request){
+        $this->promoCodeServices->deletePromoCode( $request->label);
+        return redirect('backOffice/promoCode');
     }
 }

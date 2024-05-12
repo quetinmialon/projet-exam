@@ -15,17 +15,13 @@ class OrdersServices{
 
 
     public function changeStatus($orderId, $status){
-        $order = $this->ordersRepository->getById($orderId);
-        $order->status = $status;
-        $this->ordersRepository->save($order);
+
+        $this->ordersRepository->changeStatus($orderId, $status);
 
     }
 
     public function getById($orderId){
         return $this->ordersRepository->getById($orderId);
-    }
-    public function getOrdersByUserId($userId){
-        return $this->ordersRepository->getByUser($userId);
     }
 
     public function putBasketProductIntoOrderTable(array $productsInBasket,string $adress, string $paymentMethod, string $status,int $price,int $userId){

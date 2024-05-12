@@ -23,4 +23,12 @@ class PromoCodeServices{
     private function promoCodeExists(string $label):bool{
         return $this->promoCodeRepository->getByLabel($label) ? true : false;
     }
+
+    public function deletePromoCode(string $label){
+        $promoCode = $this->promoCodeRepository->getByLabel($label);
+        if(!$promoCode){
+            return;
+        }
+        $this->promoCodeRepository->delete($promoCode);
+    }
 }

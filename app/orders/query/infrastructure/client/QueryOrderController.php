@@ -4,12 +4,13 @@ namespace App\orders\query\infrastructure\client;
 
 use App\auth\services\UsersService;
 use App\orders\query\work_application\services\QueryOrdersServices;
+use App\products\work_application\services\ProductsService;
 use App\shared\Controller;
 use Illuminate\Http\Request;
 
 class QueryOrderController extends Controller {
 
-    public function __construct(private UsersService $usersService, private QueryOrdersServices $queryOrdersServices){}
+    public function __construct(private UsersService $usersService, private QueryOrdersServices $queryOrdersServices, private ProductsService $productsService){}
 
 
     public function getTheOrdersOfCurrentUser(){
@@ -18,7 +19,19 @@ class QueryOrderController extends Controller {
     }
 
     public function getAllOrders(){
-        return(view('backOffice.orders.orders',['orders'=>($this->queryOrdersServices->getAllOrders())]));
+
+        $orders = $this->queryOrdersServices->getAllOrders();
+        foreach($orders as &$order){
+            $order['user_email'] = $this->usersService->getUserInfo($order['userId'])['email'];
+            $order['products']= $this->queryOrdersServices->getProductsInOrder($order['id']);
+            foreach($order['products'] as &$productInOrder){
+                $product = $this->productsService->getOneProduct($productInOrder['productId']);
+                $productInOrder['productName'] = $product['name'];
+            }
+            unset($productInOrder);
+        }
+        unset($order);
+        return(view('backOffice.orders.orders',['orders'=>$orders]));
     }
 
     public function getOrdersByStatus(Request $request){

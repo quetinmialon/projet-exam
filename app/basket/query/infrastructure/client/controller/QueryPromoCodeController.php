@@ -5,7 +5,7 @@ namespace App\basket\query\infrastructure\client\controller;
 use App\basket\query\work_application\queries\GetAllPromoCodes;
 use App\basket\query\work_application\queries\GetPromoCodeByLabel;
 use App\shared\Controller;
-
+use Illuminate\Http\Request;
 
 class QueryPromoCodeController extends Controller {
 
@@ -17,10 +17,6 @@ class QueryPromoCodeController extends Controller {
 
     public function getAllPromoCodes(){
         return view('backOffice.promoCode.promoCodes',['promoCodes' => $this->getAllPromoCodes->execute()]);
-    }
-
-    public function getPromoCodesForm(){
-        return view('backOffice.promoCode.addForm');
     }
     
 }

@@ -19,4 +19,9 @@ class EloquentPromoCodeRepository implements PromoCodeRepository{
         $snapshot = $promoCode->snapshot();
         PromoCodeModel::updateOrCreate(['label'=> $snapshot['label']],$snapshot);
     }
+
+    public function delete(PromoCode $promoCode):void{
+        $snapshot = $promoCode->snapshot();
+        PromoCodeModel::where('label','=',$snapshot['label'])->delete();
+    }
 }

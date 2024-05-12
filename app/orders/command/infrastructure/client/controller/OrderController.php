@@ -21,4 +21,9 @@ class OrderController extends Controller {
         $this->basketServices->clear($userId);
         return redirect()->route('profile');
     }
+
+    public function updateOrderStatus(Request $request){
+        $this->ordersService->changeStatus($request->id,$request->status);
+        return redirect('/backOffice/orders');
+    }
 }

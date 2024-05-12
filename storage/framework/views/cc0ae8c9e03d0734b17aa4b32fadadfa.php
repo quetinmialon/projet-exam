@@ -1,4 +1,13 @@
-<x-layout-admin>
+<?php if (isset($component)) { $__componentOriginal2e6fb18f75884c4fed4e10444e669251 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal2e6fb18f75884c4fed4e10444e669251 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.layout-admin','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('layout-admin'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
     <div class="text-gray-900 bg-gray-200">
         <div class="p-4 flex flex-row justify-between">
             <div>
@@ -31,36 +40,36 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($orders as $order)
+                    <?php $__currentLoopData = $orders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $order): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr class="border-b hover:bg-orange-100 bg-gray-100">
-                        <td class="p-3 px-5">{{ $order['id'] }}</td>
-                        <td class="p-3 px-5">{{ $order['totalPrice'] }} €</td> 
-                        <td class="p-3 px-5">{{ $order['paymentMethod'] }}</td>                   
-                        <td class="p-3 px-5">{{ $order['user_email'] }}</td>
-                        <td class="p-3 px-5">{{ $order['adress'] }}</td>
+                        <td class="p-3 px-5"><?php echo e($order['id']); ?></td>
+                        <td class="p-3 px-5"><?php echo e($order['totalPrice']); ?> €</td> 
+                        <td class="p-3 px-5"><?php echo e($order['paymentMethod']); ?></td>                   
+                        <td class="p-3 px-5"><?php echo e($order['user_email']); ?></td>
+                        <td class="p-3 px-5"><?php echo e($order['adress']); ?></td>
                         <td class="p-3 px-5 flex flex-col">
-                            <button type="button" onclick="toggleDetails({{ $loop->index }})" class="text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Consulter</button>
-                            <div id="orderDetails{{ $loop->index }}" class="hidden mt-4">
+                            <button type="button" onclick="toggleDetails(<?php echo e($loop->index); ?>)" class="text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Consulter</button>
+                            <div id="orderDetails<?php echo e($loop->index); ?>" class="hidden mt-4">
                                 <h2 class="text-lg font-semibold mb-2">Détails de la Commande</h2>
                                 <ul>
-                                    @foreach($order['products'] as $product)
-                                        <li>{{ $product['productName'] }} - Quantité: {{ $product['quantity'] }} - Id : {{$product['productId']}}</li>
-                                    @endforeach
+                                    <?php $__currentLoopData = $order['products']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <li><?php echo e($product['productName']); ?> - Quantité: <?php echo e($product['quantity']); ?> - Id : <?php echo e($product['productId']); ?></li>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </ul>
                             </div>
                         </td> 
                         <td class="p-3 px-5">
-                            <form action="/backOffice/orders/{{$order['id']}}" method="POST">
-                                @csrf
+                            <form action="/backOffice/orders/<?php echo e($order['id']); ?>" method="POST">
+                                <?php echo csrf_field(); ?>
                                 <select name="status" class="p-2 border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" onchange="this.form.submit()">
-                                    <option value="waiting" {{ $order['status'] === 'waiting' ? 'selected' : '' }}>En attente</option>
-                                    <option value="delivered" {{ $order['status'] === 'delivered' ? 'selected' : '' }}>Livré</option>
-                                    <option value="canceled" {{ $order['status'] === 'canceled' ? 'selected' : '' }}>Annulé</option>
+                                    <option value="waiting" <?php echo e($order['status'] === 'waiting' ? 'selected' : ''); ?>>En attente</option>
+                                    <option value="delivered" <?php echo e($order['status'] === 'delivered' ? 'selected' : ''); ?>>Livré</option>
+                                    <option value="canceled" <?php echo e($order['status'] === 'canceled' ? 'selected' : ''); ?>>Annulé</option>
                                 </select>
                             </form>
                         </td>
                     </tr>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
             </table>
         </div>
@@ -108,5 +117,15 @@
             });
         }
     </script>
-</x-layout-admin>
+ <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal2e6fb18f75884c4fed4e10444e669251)): ?>
+<?php $attributes = $__attributesOriginal2e6fb18f75884c4fed4e10444e669251; ?>
+<?php unset($__attributesOriginal2e6fb18f75884c4fed4e10444e669251); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal2e6fb18f75884c4fed4e10444e669251)): ?>
+<?php $component = $__componentOriginal2e6fb18f75884c4fed4e10444e669251; ?>
+<?php unset($__componentOriginal2e6fb18f75884c4fed4e10444e669251); ?>
+<?php endif; ?>
 
+<?php /**PATH C:\laragon\www\projet-exam\resources\views/backOffice/orders/orders.blade.php ENDPATH**/ ?>

@@ -9,6 +9,10 @@ interface OrdersRepository{
 
     public function delete(Order $order):void;
 
+    public function getById(string $id):Order;
+
+    public function changeStatus(string $id, string $status):void;
+
 
 
 

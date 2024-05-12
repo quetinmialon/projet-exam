@@ -92,7 +92,14 @@
                                     <div class="text-sm text-gray-900"><?php echo e($order['totalPrice']); ?>€</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <?php echo e($order['status'] !== 'waiting' ? 'bg-green-300 text-green-800' : 'bg-yellow-300 text-yellow-800'); ?>">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
+                                    <?php echo e($order['status'] == 'waiting' ? 'bg-yellow-300 text-yellow-800' : ''); ?>
+
+                                    <?php echo e($order['status'] == 'canceled' ? 'bg-red-300 text-red-800' : ''); ?>
+
+                                    <?php echo e($order['status'] == 'delivered' ? 'bg-green-300 text-green-800' : ''); ?>
+
+                                    ">
                                         <?php echo e($order['status']); ?>
 
                                     </span>
