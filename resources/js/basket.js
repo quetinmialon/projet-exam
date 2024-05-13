@@ -1,4 +1,24 @@
 import { addProductToBasket, applyPromoCode, deleteProductFromBasket, deletePromoCode } from "./Api";
+
+
+window.incrementQuantity = function(productId) {
+    const quantityInput = document.getElementById(`quantityInput${productId}`);
+    let newValue = parseInt(quantityInput.value) + 1;
+    if (newValue > 5) {
+        newValue = 5;
+    }
+    quantityInput.value = newValue;
+}
+
+
+ window.decrementQuantity = function(productId) {
+    const quantityInput = document.getElementById(`quantityInput${productId}`);
+    let newValue = parseInt(quantityInput.value) - 1;
+    if (newValue < 1) {
+        newValue = 1;
+    }
+    quantityInput.value = newValue;
+}
 window.updateActionAndSubmit = async function(i) {
     let productId = document.getElementById("productIdInput"+i).value;
     let quantity = document.getElementById("quantityInput"+i).value;

@@ -1,39 +1,30 @@
 window.toggleFavorite = function(productId) {
-
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    const favoriteButton = document.querySelector(`#favorite-button-${productId}`);
     
-
-    const isFavorite = document.querySelector(`#favorite-button-${productId}`).classList.contains('bg-lime-600');
-
+    const isFavorite = (favoriteButton.src.includes('prefere.gif'));
 
     if (isFavorite) {
-
         fetch(`/product/${productId}/favorite/remove`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRF-TOKEN': csrfToken 
             },
-            
         }).then(() => {
-
-            document.querySelector(`#favorite-button-${productId}`).classList.remove('bg-lime-600', 'text-white');
-            document.querySelector(`#favorite-button-${productId}`).classList.add('bg-white', 'text-black');
+            favoriteButton.setAttribute('src', '/img/etoile.png');
         });
     } else {
-
         fetch(`/product/${productId}/favorite`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRF-TOKEN': csrfToken 
             },
-            
         }).then(() => {
-
-            document.querySelector(`#favorite-button-${productId}`).classList.remove('bg-white', 'text-black');
-            document.querySelector(`#favorite-button-${productId}`).classList.add('bg-lime-600', 'text-white');
+            favoriteButton.setAttribute('src', '/img/prefere.gif');
         });
     }
 }
+
 
