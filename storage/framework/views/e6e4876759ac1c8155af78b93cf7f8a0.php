@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="size-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
     <title>Document</title>
 </head>
-<body>
+<body class="flex flex-col flex-grow-1">
 
 <div class="flex justify-between items-center bg-slate-100 text-3xl p-4">
     <a href="/">
@@ -33,7 +33,6 @@
             </button>
         </a>
         <form method="GET" action="/" class="flex items-center">
-            <label for="search" class="hidden">Recherche</label>
             <input type="text" name="search" value="<?php echo e(app('request')->input('search')); ?>" class="bg-white border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring focus:ring-lime-600 focus:border-lime-600">
             <button type="submit" class="bg-lime-600 text-white py-2 px-4 rounded-md hover:bg-lime-700 transition duration-300 ease-in-out">
                 Recherche

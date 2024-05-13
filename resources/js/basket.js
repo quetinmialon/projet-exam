@@ -41,3 +41,4 @@ window.deletePromoCode = async function(){
     await deletePromoCode()
     location.reload()
 };
+

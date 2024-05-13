@@ -13,7 +13,7 @@
                     <x-basketButon :productId="$product['id']"/>  
                 </div>
                 
-                <p class="text-gray-700 text-base h-12 max-h-12 overflow-hidden">{{$product['description'] ? $product['description'] :'les détails de ce produits ne sont pas encore dévoilés mais soyez patients !'}}</p>
+                <p class="text-gray-700 text-base h-12 max-h-12 overflow-hidden">{!! $product['description'] ? nl2br(e($product['description'])) :'les détails de ce produits ne sont pas encore dévoilés mais soyez patients !'!!}</p>
             </div>
             <div class="px-4 py-2 flex flex-row justify-between">
                 <span class="text-gray-900 font-bold">{{$product['price']}} €</span>  

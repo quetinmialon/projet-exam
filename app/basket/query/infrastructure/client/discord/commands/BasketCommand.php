@@ -7,7 +7,7 @@ use App\discord\DiscordCommand;
 use Discord\Builders\MessageBuilder;
 use Discord\Parts\Interactions\Interaction;
 
-class BasketCommand extends DiscordCommand
+class BasketCommand extends DiscordCommand 
 {
     public function __construct(private readonly QueryBasketServices $basketService)
     {

@@ -14,6 +14,4 @@ interface OrdersRepository{
     public function changeStatus(string $id, string $status):void;
 
 
-
-
 }

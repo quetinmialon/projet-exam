@@ -1,0 +1,1 @@
+components.headerMobile<?php /**PATH C:\laragon\www\projet-exam\storage\framework\views/52c71c670aad8234f34439e01058aeb7.blade.php ENDPATH**/ ?>

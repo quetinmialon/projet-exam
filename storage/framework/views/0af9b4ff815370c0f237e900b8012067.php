@@ -1,4 +1,4 @@
-<div class="bg-neutral-900 text-neutral-100 p-4">
+<div class="bg-neutral-900 text-neutral-100">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div class="flex flex-col items-center md:items-start mb-4 md:mb-0">
             <img src="/img/smashup-logo.png" alt="logo" class="h-12 mb-2">
