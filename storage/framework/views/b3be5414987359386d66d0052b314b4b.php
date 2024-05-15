@@ -9,9 +9,9 @@
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
     <div class="text-gray-900 bg-gray-200">
-        <div class="p-4 flex items-center justify-between">
-            <h1 class="text-3xl">Promo Codes</h1>
-            <form action='/backOffice/promoCode/add' method="post" class="flex">
+        <div class="p-4 md:flex items-center md:justify-between">
+            <h1 class="text-3xl p-4">Promo Codes</h1>
+            <form action='/backOffice/promoCode/add' method="post" class="flex flex-col md:flex-row gap-4">
                 <?php echo csrf_field(); ?>
                 <div class="mr-2">
                     <input type="text" name="label" id="label" class="p-2 border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Nom du Code" required>
@@ -29,10 +29,10 @@
             </form>
         </div>
 
-        <div class="px-3 py-4 flex justify-center">
-            <table class="w-full text-md bg-white shadow-md rounded mb-4">
+        <div class="py-4 flex overflow-x-scroll md:overflow-x-hidden">
+            <table class="w-full text-md bg-white shadow-md" >
                 <tbody>
-                    <tr class="border-b hover:bg-orange-100 bg-gray-100 even:bg-slate-200">
+                    <tr class="border-b hover:bg-orange-100 bg-gray-100 even:bg-slate-200 ">
                         <th class="text-left p-3 px-5">Label</th>
                         <th class="text-left p-3 px-5">Type</th>
                         <th class="text-left p-3 px-5">Value</th>
@@ -49,7 +49,7 @@
                                 <?php echo e($promoCode['value']); ?> %
                             <?php endif; ?>
                         </td>
-                        <td class="p-3 px-5 flex">
+                        <td class=" flex">
                                 <a href="/backOffice/deletPromoCode/<?php echo e($promoCode['label']); ?>"><button class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">supprimer</button></a>
                         </td>
                     </tr>

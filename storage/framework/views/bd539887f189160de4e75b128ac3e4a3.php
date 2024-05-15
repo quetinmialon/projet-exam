@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
+    <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
+    <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
     <title>Document</title>
 </head>
 <body class="flex flex-col flex-grow-1">
@@ -31,7 +31,7 @@
     
     <div id="mobile-menu-logout" class="md:hidden hidden">
         <form method="GET" action="/" class="flex items-center">
-            <input type="text" name="search" value="{{ app('request')->input('search') }}" class="w-48 bg-white border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring focus:ring-lime-600 focus:border-lime-600">
+            <input type="text" name="search" value="<?php echo e(app('request')->input('search')); ?>" class="w-48 bg-white border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring focus:ring-lime-600 focus:border-lime-600">
             <button type="submit" class="text-sm bg-lime-600 text-white py-2 px-4 rounded-md hover:bg-lime-700 transition duration-300 ease-in-out">
                 Recherche
             </button>
@@ -65,3 +65,4 @@
     });
 </script>
 
+<?php /**PATH C:\laragon\www\projet-exam\resources\views/components/headerMobile-logout.blade.php ENDPATH**/ ?>

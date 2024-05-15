@@ -11,7 +11,7 @@
             </select>
 
             <label for="adress" class="block text-sm font-medium text-gray-700">Entrez votre adresse</label>
-            <input type="text" name="adress" id="address" placeholder="Votre adresse" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:outline-none focus:border-indigo-300">
+            <input type="text" name="adress" id="address" placeholder="Votre adresse" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:outline-none focus:border-indigo-300" required>
 
             <input type="hidden" name="status" value="waiting">
 

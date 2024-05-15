@@ -7,14 +7,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class headerMobile extends Component
+class HeaderMobile extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(private UsersService $userService)
+    public function __construct(public UsersService $usersService)
     {
-
+        //
     }
 
     /**
@@ -22,7 +22,7 @@ class headerMobile extends Component
      */
     public function render(): View|Closure|string
     {
-        $user = $this->userService->checkAuth();
+        $user = $this->usersService->checkAuth();
         if(!$user){
             return view ('components.headerMobile-logout');
         }

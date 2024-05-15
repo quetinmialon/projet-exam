@@ -22,25 +22,25 @@
 </div>
 
 <div class="flex flex-col flex-grow-1 md:hidden">
-    <?php if (isset($component)) { $__componentOriginal4f7a0095e602b9f70248eae04efc3b57 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal4f7a0095e602b9f70248eae04efc3b57 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.headerMobile','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+    <?php if (isset($component)) { $__componentOriginalcfa077120ba1a1745376c0994ef0e05b = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalcfa077120ba1a1745376c0994ef0e05b = $attributes; } ?>
+<?php $component = App\View\Components\HeaderMobile::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('headerMobile'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php $attributes = $attributes->except(\App\View\Components\HeaderMobile::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
-<?php if (isset($__attributesOriginal4f7a0095e602b9f70248eae04efc3b57)): ?>
-<?php $attributes = $__attributesOriginal4f7a0095e602b9f70248eae04efc3b57; ?>
-<?php unset($__attributesOriginal4f7a0095e602b9f70248eae04efc3b57); ?>
+<?php if (isset($__attributesOriginalcfa077120ba1a1745376c0994ef0e05b)): ?>
+<?php $attributes = $__attributesOriginalcfa077120ba1a1745376c0994ef0e05b; ?>
+<?php unset($__attributesOriginalcfa077120ba1a1745376c0994ef0e05b); ?>
 <?php endif; ?>
-<?php if (isset($__componentOriginal4f7a0095e602b9f70248eae04efc3b57)): ?>
-<?php $component = $__componentOriginal4f7a0095e602b9f70248eae04efc3b57; ?>
-<?php unset($__componentOriginal4f7a0095e602b9f70248eae04efc3b57); ?>
+<?php if (isset($__componentOriginalcfa077120ba1a1745376c0994ef0e05b)): ?>
+<?php $component = $__componentOriginalcfa077120ba1a1745376c0994ef0e05b; ?>
+<?php unset($__componentOriginalcfa077120ba1a1745376c0994ef0e05b); ?>
 <?php endif; ?>
 </div>
 

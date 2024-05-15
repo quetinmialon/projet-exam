@@ -26,6 +26,6 @@ class header extends Component
         if(!$user){
             return view ('components.header-logout');
         }
-        return view('components.header',['user'=> $user ]);
+        return view('components.header');
     }
 }
