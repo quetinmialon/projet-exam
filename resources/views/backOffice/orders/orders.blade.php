@@ -32,7 +32,7 @@
                 </thead>
                 <tbody>
                     @foreach($orders as $order)
-                    <tr class="border-b hover:bg-orange-100 bg-gray-100">
+                    <tr class="border-b hover:bg-orange-100 bg-gray-100 even:bg-slate-200">
                         <td class="p-3 px-5">{{ $order['id'] }}</td>
                         <td class="p-3 px-5">{{ $order['totalPrice'] }} €</td> 
                         <td class="p-3 px-5">{{ $order['paymentMethod'] }}</td>                   

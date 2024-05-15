@@ -8,7 +8,7 @@
     <div class="px-3 py-4 flex justify-center">
         <table class="w-full text-md bg-white shadow-md rounded mb-4">
             <tbody>
-                <tr class="border-b">
+                <tr class="border-b hover:bg-orange-100 bg-gray-100 even:bg-slate-200">
                     <th class="text-left p-3 px-5">Name</th>
                     <th class="text-left p-3 px-5">Email</th>
                     <th class="text-left p-3 px-5">Role</th>
