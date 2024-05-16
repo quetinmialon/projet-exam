@@ -34,7 +34,7 @@
 <?php $component = $__componentOriginal62d08f292a525f69219833e02dcd746d; ?>
 <?php unset($__componentOriginal62d08f292a525f69219833e02dcd746d); ?>
 <?php endif; ?>
-                <img class="w-full h-auto p-16" src="<?php echo e($product['img'] ? $product['img'] : '/img/paysage.png'); ?>" alt="<?php echo e($product['name']); ?>">
+                <img class="w-full h-96 p-16" src="<?php echo e($product['img'] ? $product['img'] : '/img/paysage.png'); ?>" alt="<?php echo e($product['name']); ?>">
             </div>
             <div class="px-4 py-2">
                 <div class="flex flex-rox justify-around font-bold text-xl mb-2"><?php echo e($product['name']); ?>

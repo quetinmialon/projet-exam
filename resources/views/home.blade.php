@@ -6,7 +6,7 @@
         <div class="max-w-96 mx-auto bg-white shadow-md rounded-lg mb-4"> 
             <div class="relative">
                 <x-favorite :productId="$product['id']"/>
-                <img class="w-full h-auto p-16" src="{{$product['img'] ? $product['img'] : '/img/paysage.png'}}" alt="{{$product['name']}}">
+                <img class="w-full h-96 p-16" src="{{$product['img'] ? $product['img'] : '/img/paysage.png'}}" alt="{{$product['name']}}">
             </div>
             <div class="px-4 py-2">
                 <div class="flex flex-rox justify-around font-bold text-xl mb-2">{{$product['name']}}
