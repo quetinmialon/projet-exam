@@ -11,6 +11,7 @@ class Order
         
     }
 
+    
 
 
     public function snapshot():mixed{
@@ -19,7 +20,7 @@ class Order
             'userId' => $this->userId,
             'address' => $this->address,
             'paymentMethod' => $this->paymentMethod,
-           'status' => $this->status,
+            'status' => $this->status,
             'price' => $this->price,
             'products'=> array_map(function($product){
                 return $product->snapshot();

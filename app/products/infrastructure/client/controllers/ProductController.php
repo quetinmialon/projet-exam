@@ -28,7 +28,8 @@ class ProductController extends Controller
         $name = $request->input('name');
         $price = $request->input('price');
         $description = $request->input('description');
-        $img = $request->input('img');
+        $imgPath = $request->file('img')->store('storage');
+        $img = 'http://localhost:8000/storage/'.$imgPath;
         $this->productService->addProduct($name, $price, $description, $img);
         return redirect('/backOffice/products');
     }
@@ -51,7 +52,9 @@ class ProductController extends Controller
     }
 
     public function updateProduct(Request $request){
-        $this->productService->updateProduct($request->id,$request->name,$request->price,$request->description,$request->img);
+        $imgPath = $request->file('img')->store('storage');
+        $img = 'http://localhost:8000/storage/'.$imgPath;
+        $this->productService->updateProduct($request->id,$request->name,$request->price,$request->description,$img);
         return redirect('/backOffice/products');
     }
 

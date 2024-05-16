@@ -4,19 +4,19 @@
             <h1 class="text-3xl">Modifier le produit numéro {{$product['id']}}</h1>
         </div>
         <div class="px-3 py-4 flex justify-center">
-            <form method="POST" action="/backOffice/updateProduct/{{$product['id']}}">
+            <form method="POST" action="/backOffice/updateProduct/{{$product['id']}}" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-700">Name:</label>
                     <input type="text" name="name" id="name" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{$product['name'] ?? ''}}" required>
                 </div>
-                @if($product['description'])
+                
                 <div class="mb-4">
                     <label for="description" class="block text-sm font-medium text-gray-700">Description:</label>
                     <textarea name="description" id="description" rows="4" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{$product['description'] ?? ''}}">{{$product['description'] ?? ''}}</textarea>
                 </div>
-                @endif
+                
                 <div class="mb-4">
                     <label for="price" class="block text-sm font-medium text-gray-700">Price (€):</label>
                     <input type="number" name="price" id="price" step="0.01" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{$product['price'] ?? ''}}" required>
