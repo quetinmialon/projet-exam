@@ -22,8 +22,8 @@
                     <input type="number" name="price" id="price" step="0.01" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{$product['price'] ?? ''}}" required>
                 </div>
                 <div class="mb-4">
-                    <label for="image" class="block text-sm font-medium text-gray-700">Image URL:</label>
-                    <input type="file" name="image" id="image" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    <label for="img" class="block text-sm font-medium text-gray-700">Image URL:</label>
+                    <input type="file" name="img" id="img" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                 </div>
                 @if($product['img'])
                     <div class="mb-4">
