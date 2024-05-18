@@ -8,7 +8,7 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
-    <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
+    <section class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
         <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">Liste des Extensions Smash Up</h1>
         
         <div class="mb-6">
@@ -40,7 +40,7 @@
                 <li>Smash Up – L’Énorme boîte pour Geek (2020)</li>
             </ul>
         </div>
-    </div>
+    </section>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal23a33f287873b564aaf305a1526eada4)): ?>

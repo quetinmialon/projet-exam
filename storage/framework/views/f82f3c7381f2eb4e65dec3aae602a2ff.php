@@ -12,16 +12,16 @@
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
     <body>
-    <div class="container mx-auto py-16">
+    <section class="container mx-auto py-16">
         <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-lg">
-            <div class="text-lg bg-lime-600 text-white py-4 px-6 font-semibold"><?php echo e(__('Inscription')); ?></div>
+            <div class="text-lg bg-lime-600 text-white py-4 px-6 font-semibold">Inscription</div>
 
             <div class="px-6 py-4">
                 <form method="POST" action="<?php echo e(route('register')); ?>">
                     <?php echo csrf_field(); ?>
 
                     <div class="mb-4">
-                        <label for="name" class="block text-sm font-medium text-gray-700"><?php echo e(__('Nom')); ?></label>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Nom</label>
                         <input id="name" type="text" class="form-input mt-1 block w-full rounded-md shadow-sm focus:border-lime-600 focus:ring focus:ring-lime-600 focus:ring-opacity-50 <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -44,7 +44,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
 
                     <div class="mb-4">
-                        <label for="email" class="block text-sm font-medium text-gray-700"><?php echo e(__('Adresse E-Mail')); ?></label>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Adresse E-Mail</label>
                         <input id="email" type="email" class="form-input mt-1 block w-full rounded-md shadow-sm focus:border-lime-600 focus:ring focus:ring-lime-600 focus:ring-opacity-50 <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -67,7 +67,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
 
                     <div class="mb-4">
-                        <label for="password" class="block text-sm font-medium text-gray-700"><?php echo e(__('Mot de passe')); ?></label>
+                        <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
                         <input id="password" type="password" class="form-input mt-1 block w-full rounded-md shadow-sm focus:border-lime-600 focus:ring focus:ring-lime-600 focus:ring-opacity-50 <?php $__errorArgs = ['password'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -96,14 +96,13 @@ unset($__errorArgs, $__bag); ?>
 
                     <div class="flex items-center justify-center">
                         <button type="submit" class="bg-lime-600 text-white px-4 py-2 rounded-md hover:bg-lime-700 focus:outline-none focus:bg-lime-700">
-                            <?php echo e(__('S\'inscrire')); ?>
-
+                            S'inscrire
                         </button>
                     </div>
                 </form>
             </div>
         </div>
-    </div>
+    </section>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal23a33f287873b564aaf305a1526eada4)): ?>

@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
+    <section class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
         <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">Liste des Extensions Smash Up</h1>
         
         <div class="mb-6">
@@ -31,5 +31,5 @@
                 <li>Smash Up – L’Énorme boîte pour Geek (2020)</li>
             </ul>
         </div>
-    </div>
+    </section>
 </x-layout>

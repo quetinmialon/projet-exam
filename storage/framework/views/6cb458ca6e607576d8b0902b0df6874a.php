@@ -10,10 +10,10 @@
 <?php $component->withAttributes([]); ?>
 
 
-<div class="m-4 max-w-md mx-auto bg-white shadow-md overflow-hidden rounded-lg mb-4">
+<section class="m-4 max-w-md mx-auto bg-white shadow-md overflow-hidden rounded-lg mb-4">
     <img class="w-full h-96" src="<?php echo e($product['img'] ? $product['img'] : '/img/paysage.png'); ?>" alt="<?php echo e($product['name']); ?>">
     <div class="px-4 py-2">
-        <div class="font-bold text-xl mb-2"><?php echo e($product['name']); ?></div>
+        <h1 class="font-bold text-xl mb-2"><?php echo e($product['name']); ?></h1>
         <p class="text-gray-700 text-base"><?php echo $product['description'] ? nl2br(e($product['description'])) :'les détails de ce produits ne sont pas encore dévoilés mais soyez patients !'; ?></p>
     </div>
     <div class="px-4 py-2">
@@ -39,7 +39,7 @@
 <?php $component = $__componentOriginaldcda4c6affaab0b33a4e4640b5ebbcd9; ?>
 <?php unset($__componentOriginaldcda4c6affaab0b33a4e4640b5ebbcd9); ?>
 <?php endif; ?>
-</div>
+</section>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal23a33f287873b564aaf305a1526eada4)): ?>

@@ -1,4 +1,4 @@
-<div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
+<section class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
     <?php if(session()->has('text')): ?>
         <p class="text-green-500 text-center mb-4"><?php echo e(session('text')); ?></p>
     <?php endif; ?>
@@ -18,7 +18,7 @@
         </div>
         <button type="submit" class="w-full bg-lime-600 text-white py-2 px-4 rounded-md hover:bg-lime-700 transition duration-300 ease-in-out">Envoyer le message</button>
     </form>
-</div>
+</section>
 
 
 <?php /**PATH C:\laragon\www\projet-exam\resources\views/components/forms/contact-form.blade.php ENDPATH**/ ?>
