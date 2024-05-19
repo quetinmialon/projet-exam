@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Smash Up | info {{$user['name']}}">
     <div class="bg-white overflow-hidden shadow rounded-lg border">
         <div class="px-4 py-5 sm:px-6 flex flex-row">
             <h3 class="text-lg leading-6 font-medium text-gray-900">

@@ -1,5 +1,5 @@
 
-<x-layout>
+<x-layout title="Smash Up">
     <section class ="flex flex-row flex-wrap items-start">
     @foreach($products as $product)
        
@@ -10,7 +10,7 @@
             </div>
             <div class="px-4 py-2">
                 <h2 class="flex flex-rox justify-around font-bold text-xl mb-2">{{$product['name']}}
-                    <x-basketButon :productId="$product['id']"/>  
+                    <x-basketButon  :productId="$product['id']"/>  
                 </h2>
                 
                 <p class="text-gray-700 text-base h-12 max-h-12 overflow-hidden">{!! $product['description'] ? nl2br(e($product['description'])) :'les détails de ce produits ne sont pas encore dévoilés mais soyez patients !'!!}</p>

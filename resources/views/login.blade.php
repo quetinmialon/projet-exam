@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Smash Up | login form">
     <section class="container mx-auto py-16">
         <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-lg">
             <h1 class="text-lg bg-lime-600 text-white py-4 px-6 font-semibold">Connexion</h1>

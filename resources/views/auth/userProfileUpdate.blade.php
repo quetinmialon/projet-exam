@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Smash Up | {{$user['name']}} update form">
 <div class="container mx-auto max-w-md mt-10">
         <h1 class="text-2xl font-bold mb-6">Modifier le Profil</h1>
         @if($errors->any())

@@ -1,5 +1,5 @@
 
-<x-layout>
+<x-layout title="Smash Up | rules">
     <body class="bg-gray-100 p-4">
     <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
         <h1 class="text-3xl font-bold mb-4">Règles du jeu Smash Up</h1>

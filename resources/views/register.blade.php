@@ -1,7 +1,7 @@
-<!-- resources/views/auth/register.blade.php -->
 
 
-<x-layout>
+
+<x-layout title="Smash Up | register form">
     <body>
     <section class="container mx-auto py-16">
         <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-lg">

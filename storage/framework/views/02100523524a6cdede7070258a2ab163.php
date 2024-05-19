@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" class="size-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
+    <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
+    <title><?php echo e($title); ?></title>
+</head>
+<body class="flex flex-col flex-grow-1"></body>
 <div class="hidden md:flex items-center gap-4  md:flex-col md:flex-grow-1">
     <?php if (isset($component)) { $__componentOriginal2a2e454b2e62574a80c8110e5f128b60 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal2a2e454b2e62574a80c8110e5f128b60 = $attributes; } ?>

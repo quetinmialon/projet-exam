@@ -12,7 +12,7 @@ class header extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(private UsersService $userService)
+    public function __construct(private UsersService $userService, public string $title = 'Smash Up')
     {
 
     }

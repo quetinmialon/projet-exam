@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Smash Up | payment info">
     <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
         <form method="post" action="/orderCreate" class="space-y-4">
             @csrf

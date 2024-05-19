@@ -1,4 +1,4 @@
-<x-layout> 
+<x-layout title="Smash Up | send mail"> 
     <section class="container mx-auto mt-8 p-6 bg-white shadow-lg rounded-lg">
         <h1 class="text-3xl font-bold text-gray-800 mb-6">Mail Envoyé!</h1>
         <p class="text-lg text-gray-700 mb-4">Votre message a été envoyé avec succès.</p>

@@ -12,7 +12,7 @@ class HeaderMobile extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public UsersService $usersService)
+    public function __construct(public UsersService $usersService, public string $title ='smash up')
     {
         //
     }

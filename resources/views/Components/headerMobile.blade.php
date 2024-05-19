@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" class="size-full">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
-    <title>Document</title>
-</head>
-<body class="flex flex-col flex-grow-1"></body>
 
 @if($user)
 <div class="flex justify-between items-center bg-slate-100 text-3xl p-4">

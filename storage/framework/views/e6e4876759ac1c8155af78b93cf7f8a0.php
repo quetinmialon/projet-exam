@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" class="size-full">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
-    <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
-    <title>Document</title>
-</head>
-<body class="flex flex-col flex-grow-1">
+
 
 <div class="w-full flex justify-between items-center bg-slate-100 text-3xl p-4">
     <a href="/">

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
-    <title>Document</title>
+    <title>backoffice</title>
 </head>
 <header>
 <div class="bg-gray-800 text-white p-4 flex justify-between items-center">

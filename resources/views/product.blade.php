@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Smash Up | {{$product['name']}}">
 
 
 <section class="m-4 max-w-md mx-auto bg-white shadow-md overflow-hidden rounded-lg mb-4">

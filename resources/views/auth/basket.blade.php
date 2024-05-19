@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Smash Up | basket">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <div class="container mx-auto mt-8 w-full flex flex-col">
     <h1 class="text-3xl font-semibold mb-4">Panier</h1>
