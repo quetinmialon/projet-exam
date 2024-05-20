@@ -9,7 +9,7 @@
     <title><?php echo e($title); ?></title>
 </head>
 <body class="flex flex-col flex-grow-1"></body>
-<div class="hidden md:flex items-center gap-4  md:flex-col md:flex-grow-1">
+<div class="hidden md:flex items-center gap-4  md:flex-col">
     <?php if (isset($component)) { $__componentOriginal2a2e454b2e62574a80c8110e5f128b60 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal2a2e454b2e62574a80c8110e5f128b60 = $attributes; } ?>
 <?php $component = App\View\Components\Header::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -32,7 +32,7 @@
 <?php endif; ?>
 </div>
 
-<div class="flex flex-col flex-grow-1 md:hidden">
+<div class="flex flex-col md:hidden">
     <?php if (isset($component)) { $__componentOriginalcfa077120ba1a1745376c0994ef0e05b = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalcfa077120ba1a1745376c0994ef0e05b = $attributes; } ?>
 <?php $component = App\View\Components\HeaderMobile::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>

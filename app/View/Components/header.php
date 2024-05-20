@@ -14,7 +14,7 @@ class header extends Component
      */
     public function __construct(private UsersService $userService, public string $title = 'Smash Up')
     {
-
+ 
     }
 
     /**

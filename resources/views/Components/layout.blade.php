@@ -9,11 +9,11 @@
     <title>{{$title}}</title>
 </head>
 <body class="flex flex-col flex-grow-1"></body>
-<div class="hidden md:flex items-center gap-4  md:flex-col md:flex-grow-1">
+<div class="hidden md:flex items-center gap-4  md:flex-col">
     <x-header/>
 </div>
 
-<div class="flex flex-col flex-grow-1 md:hidden">
+<div class="flex flex-col md:hidden">
     <x-headerMobile/>
 </div>
 
