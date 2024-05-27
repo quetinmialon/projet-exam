@@ -1,0 +1,18 @@
+name: Check branch
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-branch:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check branch
+        if: github.head_ref != 'develop'
+        run: |
+          echo "ERREUR: Seule la branche develop peut être fusionnée avec la branche main."
+          exit 1
